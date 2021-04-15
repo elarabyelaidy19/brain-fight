@@ -18,5 +18,17 @@ p sum
 
 # third approach  
 
+def sum_div_by_3_5(num) 
+
+  numbers = [] 
+  
+  (3...num).each do |i| 
+    numbers << i if (i % 3 == 0 || i % 5 == 0) 
+  end
+
+  numbers.sum 
+end 
+
+p sum_div_by_3_5(1000) 
 
 
