@@ -3,3 +3,22 @@
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+
+
+
+sum, f0, f1 = 0, 1, 1
+
+while true
+  f2 = f0 + f1
+  sum += f2 if f2.even?
+
+  if f2 > 4e6
+    puts "Sum of all even-valued terms in Fibonacci sequence < 4 million = #{sum}"
+    exit 
+  end
+
+  f0 = f1
+  f1 = f2
+end 
+
+p sum 
