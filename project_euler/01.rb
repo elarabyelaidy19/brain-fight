@@ -10,4 +10,13 @@ end
 p sum 
 
 
-def 
+#second approach 
+
+sum = 0 
+(3...1000).each { |i| sum += i if (i % 3 == 0 || i % 5 == 0) } 
+p sum
+
+# third approach  
+
+
+
