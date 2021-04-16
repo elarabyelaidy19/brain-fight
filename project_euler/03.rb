@@ -3,7 +3,39 @@
 
 def prime?(num) 
   (2...num).each do |i|
-    return false if num % i == 0
+    if num % i == 0 
+      return false
+    end 
   end 
-  return true 
+  return true  
 end 
+
+def factor?(curr_num, num) 
+  if num % curr_num == 0  
+    return true
+  else 
+    return false  
+  end 
+end 
+
+def get_first_prime_factor(num) 
+  (2...num).each do |curr_num| 
+     if factor?(curr_num, num) && prime?(curr_num)
+      return curr_num
+     end
+  end 
+end 
+
+num = 600851475143 
+prime_factors = [] 
+n = num 
+until prime?(n) 
+  prime_factor = get_first_prime_factor(n) 
+  prime_factors << prime_factor
+  n = n / prime_factor
+end 
+
+prime_factors << n 
+p prime_factors.max
+
+
