@@ -1,3 +1,7 @@
+# Time-complexity: O(n^2) 
+
+
+
 def bubble_sort(arr)
 
   for i in 0...arr.length - 1 
