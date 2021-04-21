@@ -9,3 +9,17 @@ end
 
 p range(1, 5)
 
+# Write both a recursive and iterative version of sum of an array.
+
+def sum(array) 
+
+  sum = 0 
+
+  array.each do |ele| 
+    sum += ele  
+  end 
+
+  sum 
+end 
+
+p sum([1, 3, 6])
