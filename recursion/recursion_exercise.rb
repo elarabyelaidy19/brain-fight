@@ -23,3 +23,13 @@ def sum(array)
 end 
 
 p sum([1, 3, 6])
+
+
+def sum_recursive(array) 
+  return nil if array.empty?
+  return array[0] if array.length == 1
+
+  array[0] + sum_recursive(array[1..-1]) 
+end 
+
+p sum_recursive([1, 3, 6]) 
