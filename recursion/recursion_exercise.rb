@@ -33,3 +33,4 @@ def sum_recursive(array)
 end 
 
 p sum_recursive([1, 3, 6]) 
+
