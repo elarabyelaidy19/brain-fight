@@ -34,3 +34,25 @@ end
 
 p sum_recursive([1, 3, 6]) 
 
+# Write two versions of exponent that use two different recursions: 
+# this is math, not Ruby methods.
+
+# recursion 1
+# exp(b, 0) = 1
+# exp(b, n) = b * exp(b, n - 1)
+
+# recursion 2
+# exp(b, 0) = 1
+# exp(b, 1) = b
+# exp(b, n) = exp(b, n / 2) ** 2             [for even n]
+# exp(b, n) = b * (exp(b, (n - 1) / 2) ** 2) [for odd n]# 
+
+def exponent(base, expo) 
+
+  return 1 if expo == 0 
+
+  base * exponent(base, expo - 1) 
+end 
+
+p exponent(2, 3)
+
