@@ -56,3 +56,23 @@ end
 
 p exponent(2, 3) 
 
+
+def exponent_2(base, expo) 
+  
+  return 1 if expo == 0 
+  return base if expo == 1 
+
+  half = exponent(base, expo / 2) 
+
+  if expo.even? 
+    result = half**2  # expo is even 
+  else  
+    result = base * half**2   # expo is odd 
+  end 
+end 
+
+p exponent_2(2, 2) 
+p exponent_2(2, 3) 
+
+
+
