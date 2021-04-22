@@ -54,5 +54,5 @@ def exponent(base, expo)
   base * exponent(base, expo - 1) 
 end 
 
-p exponent(2, 3)
+p exponent(2, 3) 
 
