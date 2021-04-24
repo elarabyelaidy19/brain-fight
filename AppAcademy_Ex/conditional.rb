@@ -29,3 +29,14 @@ end
 p either_only?(15) 
 p either_only?(10) 
 p either_only?(9) 
+
+
+# Write a method larger_number(num1, num2) that takes in two numbers and returns the larger of the two numbers.  
+
+def larger_number(num1, num2) 
+
+  num1 > num2 ? num1 : num2 
+end 
+
+p larger_number(122, 16)  
+p larger_number(12, 14) 
