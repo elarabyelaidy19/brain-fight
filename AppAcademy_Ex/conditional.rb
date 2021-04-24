@@ -53,3 +53,17 @@ end
 puts longer_string("app", "academy") 
 puts longer_string("summer", "fall") 
 
+
+# Write a method number_check(num) that takes in a number and returns a string.
+ # The method should return the string 'positive' if the num is positive, 'negative' if the num is negative, and 'zero' if the num is zero. 
+
+ def number_check(number) 
+
+  return "positive" if number > 0 
+  return "negative" if number < 0 
+  return "zero" if number == 0
+ end 
+
+puts number_check(5)   
+puts number_check(-2)  
+puts number_check(0)    
