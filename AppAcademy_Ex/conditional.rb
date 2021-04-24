@@ -67,3 +67,4 @@ puts longer_string("summer", "fall")
 puts number_check(5)   
 puts number_check(-2)  
 puts number_check(0)    
+
