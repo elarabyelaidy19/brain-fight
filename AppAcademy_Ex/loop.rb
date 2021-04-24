@@ -14,3 +14,24 @@ end
 p count_e("eleare")  
 p  count_e "alaraby"
 
+# sol 2 
+
+def count_e(word) 
+  
+  count = 0 
+  
+  i = 0 
+  while i < word.length 
+
+    if word[i] == "e" 
+      count += 1 
+    end 
+    
+    i += 1
+  end 
+
+  return count 
+end 
+
+p count_e("eleare")  
+p  count_e "alaraby"
