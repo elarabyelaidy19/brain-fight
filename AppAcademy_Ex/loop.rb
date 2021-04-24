@@ -107,3 +107,23 @@ end
 
 puts factorial(3) 
 puts factorial(5) 
+
+# Write a method reverse(word) that takes in a string word and returns the word with its letters in reverse order. 
+
+def reverse(word) 
+
+  new_word = "" 
+  length = word.length 
+
+  while length > 0 
+    new_word += word[length - 1]
+    
+    length -= 1
+  end 
+
+  new_word
+end 
+
+puts reverse("cat")          # => "tac"
+puts reverse("programming")  # => "gnimmargorp"
+puts reverse("bootcamp")  
