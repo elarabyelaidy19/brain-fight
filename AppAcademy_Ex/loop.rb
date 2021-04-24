@@ -89,4 +89,21 @@ def sum_nums(number)
 end 
 
 puts sum_nums(4) # => 10, because 1 + 2 + 3 + 4 = 10
-puts sum_nums(5) # => 15 
+puts sum_nums(5) # => 15  
+
+
+# Write a method factorial(num) that takes in a number num and returns the product of all numbers from 1 up to and including num. 
+
+def factorial(num) 
+
+  product = 1 
+
+  (1..num).each do |ele| 
+    product *= ele 
+  end 
+
+  product 
+end 
+
+puts factorial(3) 
+puts factorial(5) 
