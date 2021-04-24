@@ -40,3 +40,16 @@ end
 
 p larger_number(122, 16)  
 p larger_number(12, 14) 
+
+
+# Write a method longer_string(str1, str2) 
+# that takes in two strings and returns the longer of the two strings. In the case of a tie, the method should return the first string. 
+
+def longer_string(str1, str2) 
+  
+  str1.length >= str2.length ? str1 : str2   
+end 
+
+puts longer_string("app", "academy") 
+puts longer_string("summer", "fall") 
+
