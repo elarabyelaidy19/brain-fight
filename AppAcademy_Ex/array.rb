@@ -94,3 +94,22 @@ end
 print even_nums(10) # => [0, 2, 4, 6, 8, 10]
 puts
 print even_nums(5)  # => [0, 2, 4] 
+
+
+
+# Write a method range(min, max) that takes in two numbers min and max. 
+# The method should return an array containing all numbers from min to max inclusive. 
+
+def range(min, max) 
+  new_array = [] 
+
+  (min...max).each do |ele| 
+    new_array << ele
+  end 
+
+  new_array
+end 
+puts 
+print range(2, 7)   
+puts
+print range(13, 20)
