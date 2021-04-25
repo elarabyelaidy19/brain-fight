@@ -131,3 +131,45 @@ puts
 print odd_range(11, 18) 
 puts
 print odd_range(3, 7)
+
+
+# Write a method reverse_range(min, max) that takes in two numbers min and max. 
+# The function should return an array containing all numbers from min to max in reverse order. The min and max should be excluded from the array
+
+def reverse_range(min, max) 
+  new_array = [] 
+
+  (min+1...max).reverse_each do |ele| 
+    new_array << ele 
+  end 
+
+  new_array
+end 
+
+puts
+print reverse_range(10, 17)
+puts
+print reverse_range(1, 7)
+
+
+
+def reverse_range(min, max) 
+
+  new_array = [] 
+
+  i = max - 1 
+  while i > min
+    new_array << i 
+
+    i -= 1
+  end 
+
+  new_array 
+end 
+
+
+puts
+print reverse_range(10, 17)
+puts
+print reverse_range(1, 7)
+
