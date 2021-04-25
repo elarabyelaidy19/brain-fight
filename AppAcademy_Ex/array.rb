@@ -272,4 +272,16 @@ puts
 print select_long_words(["what", "are", "we", "eating", "for", "dinner"]) 
 puts
 print select_long_words(["keep", "coding"])          
-   
+
+
+# sol 2  
+
+def select_long_words(words) 
+  words.select { |word| word.length > 4} 
+end 
+
+puts 
+puts
+print select_long_words(["what", "are", "we", "eating", "for", "dinner"]) 
+puts
+print select_long_words(["keep", "coding"])          
