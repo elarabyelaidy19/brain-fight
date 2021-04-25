@@ -285,3 +285,29 @@ puts
 print select_long_words(["what", "are", "we", "eating", "for", "dinner"]) 
 puts
 print select_long_words(["keep", "coding"])          
+
+
+# sol 3 
+
+
+def select_long_words(words) 
+  longest_words = []
+
+  i = 0 
+  while i < words.length
+    word = words[i]  
+    if word.length > 4
+      longest_words << word 
+    end 
+
+    i += 1
+  end 
+
+  longest_words
+end 
+
+puts 
+puts
+print select_long_words(["what", "are", "we", "eating", "for", "dinner"]) 
+puts
+print select_long_words(["keep", "coding"])          
