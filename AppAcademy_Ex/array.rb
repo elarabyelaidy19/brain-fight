@@ -114,3 +114,20 @@ print range(2, 7)
 puts
 print range(13, 20)
 
+
+# Write a method odd_range(min, max) that takes in two numbers min and max.  
+# The method should return an array containing all odd numbers from min to max (inclusive). 
+
+def odd_range(min, max)
+
+  odd_numbers = [] 
+  (min..max).each do |ele| 
+    odd_numbers << ele if ele % 2 != 0 
+  end 
+  
+  odd_numbers
+end 
+puts
+print odd_range(11, 18) 
+puts
+print odd_range(3, 7)
