@@ -38,3 +38,22 @@ end
 p doubler([1, 2, 3, 4]) # => [2, 4, 6, 8]
 
 p doubler([7, 1, 8])    # 
+
+
+
+# Write a method yell(words) that takes in an array of words and returns a
+# new array where every word from the original array has an exclamation point after it. 
+
+def yell(words) 
+
+  yelled = [] 
+
+  (0...words.length).each do |ele| 
+    yelled <<  words[ele] + '!' 
+  end 
+  yelled
+end 
+
+p yell(["hello", "world"]) 
+puts
+p yell(["code", "is", "cool"]) 
