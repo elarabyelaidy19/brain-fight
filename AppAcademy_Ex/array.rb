@@ -220,3 +220,21 @@ puts
 print factors_of(9)  
 puts
 print factors_of(16) 
+
+
+# Write a method select_odds(numbers) that takes in an array of numbers and returns a new array containing the odd numbers of the original array. 
+
+def select_odds(numbers) 
+  new_array = [] 
+
+  (0...numbers.length).each do |ele| 
+    new_array << numbers[ele] if numbers[ele] % 2 != 0
+  end 
+
+  new_array
+end 
+
+
+puts 
+print select_odds([13, 4, 3, 7, 6, 11]) 
+print select_odds([2, 4, 6]) 
