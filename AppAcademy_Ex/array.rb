@@ -76,3 +76,21 @@ end
 print element_times_index([4, 7, 6, 5])      
 puts
 print element_times_index([1, 1, 1, 1, 1, 1]) 
+puts
+
+
+# Write a method even_nums(max) that takes in a number max and returns an array containing all even numbers from 0 to max 
+
+def even_nums(max) 
+  even_numbers = [] 
+
+  (0..max).each do |ele| 
+    even_numbers << ele if ele % 2 == 0
+  end 
+
+  even_numbers
+end 
+
+print even_nums(10) # => [0, 2, 4, 6, 8, 10]
+puts
+print even_nums(5)  # => [0, 2, 4] 
