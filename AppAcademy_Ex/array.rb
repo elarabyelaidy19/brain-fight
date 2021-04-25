@@ -103,7 +103,7 @@ print even_nums(5)  # => [0, 2, 4]
 def range(min, max) 
   new_array = [] 
 
-  (min...max).each do |ele| 
+  (min..max).each do |ele| 
     new_array << ele
   end 
 
@@ -113,3 +113,4 @@ puts
 print range(2, 7)   
 puts
 print range(13, 20)
+
