@@ -199,3 +199,24 @@ puts
 print first_half(["a", "b", "c", "d", "e"])  
 
   
+# Write a method factors_of(num) that takes in a num and returns an array of all positive numbers less than or equal to num that can divide num. 
+
+def factors_of(num) 
+  factors = [] 
+
+  (1..num).each do |ele| 
+    factors << ele if num % ele == 0 
+  end 
+  factors 
+end 
+
+puts
+print factors_of(3)  
+puts
+print factors_of(4)   
+puts
+print factors_of(8)   
+puts
+print factors_of(9)  
+puts
+print factors_of(16) 
