@@ -117,13 +117,26 @@ def reverse(word)
 
   while length > 0 
     new_word += word[length - 1]
-    
+
     length -= 1
   end 
 
   new_word
 end 
 
-puts reverse("cat")          # => "tac"
-puts reverse("programming")  # => "gnimmargorp"
-puts reverse("bootcamp")  
+puts reverse("cat")        
+puts reverse("programming")  
+puts reverse("bootcamp")   
+
+
+# Write a method is_palindrome(word) that takes in a string word and returns the true if the word is a palindrome, false otherwise.
+ # A palindrome is a word that is spelled the same forwards and backwards.
+
+def is_palindrome(word) 
+
+   word == reverse(word)
+end 
+
+puts is_palindrome("racecar")  # => true
+puts is_palindrome("kayak")    # => true
+puts is_palindrome("bootcamp") # => false
