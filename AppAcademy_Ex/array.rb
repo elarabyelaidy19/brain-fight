@@ -237,4 +237,18 @@ end
 
 puts 
 print select_odds([13, 4, 3, 7, 6, 11]) 
+puts
 print select_odds([2, 4, 6]) 
+
+
+# sol 2 
+
+def select_odds(numbers) 
+
+  numbers.select { |ele| ele.odd?   }
+end 
+
+puts 
+print select_odds([13, 4, 3, 7, 6, 11]) 
+puts
+print select_odds([2, 4, 6, 3]) 
