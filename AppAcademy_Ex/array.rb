@@ -152,6 +152,7 @@ puts
 print reverse_range(1, 7)
 
 
+# sol 2
 
 def reverse_range(min, max) 
 
@@ -172,4 +173,4 @@ puts
 print reverse_range(10, 17)
 puts
 print reverse_range(1, 7)
-
+ 
