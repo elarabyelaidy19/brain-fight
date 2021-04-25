@@ -252,3 +252,24 @@ puts
 print select_odds([13, 4, 3, 7, 6, 11]) 
 puts
 print select_odds([2, 4, 6, 3]) 
+
+
+# Write a method select_long_words(words) that takes in an array of words and 
+# returns a new array containing all of the words of the original array that are longer than 4 characters.
+
+def select_long_words(words) 
+  longest_words = [] 
+
+  (0...words.length).each do |ele| 
+    longest_words << words[ele] if words[ele].length > 4
+  end 
+
+  longest_words
+end 
+
+puts 
+puts
+print select_long_words(["what", "are", "we", "eating", "for", "dinner"]) 
+puts
+print select_long_words(["keep", "coding"])          
+   
