@@ -80,9 +80,9 @@ class Array
     new_array = [] 
     self.each do |ele| 
       if ele.is_a?(Array) 
-      new_array << ele.deep_dup 
+        new_array << ele.deep_dup 
       else 
-      ele 
+        ele 
       end 
     end 
 
@@ -90,7 +90,7 @@ class Array
   end 
 
   def dd_map 
-    self.map { |el| el.is_a(Array) ? el.dd_map :el }
+    self.map { |el| el.is_a(Array) ? el.dd_map : el }
   end 
 
 end 
@@ -108,6 +108,19 @@ def fib(n)
 
   fibs
 end 
+
+p fib(5)
+
+def fibs_rec(n) 
+
+  return [] if n = 0
+  return 0 if n == 1
+
+  fibs = fibs_rec(n - 1) 
+  fibs << fibs[-2] + fibs[-1] 
+end 
+
+
 
 
 
