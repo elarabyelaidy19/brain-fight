@@ -37,3 +37,13 @@ end
 p count_occurrences([1, 3, 3, 9], 3)
 
 
+# Problem 4: You have array of integers. Write a recursive solution to determine whether or not two adjacent elements of the array add to 12. 
+
+def add_to_twelve(array) 
+  return false if array.length <= 1
+  return true if array[0] + array[1] == 12 
+  add_to_twelve(array[1..-1])
+end 
+
+p add_to_twelve([1, 3, 3, 7])
+  
