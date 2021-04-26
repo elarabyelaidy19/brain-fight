@@ -71,3 +71,24 @@ p  reverse("atom") # => "mota"
 p  reverse("q") # => "q"
 p  reverse("id") # => "di"
 p  reverse("") # => ""
+
+
+class Array 
+  def deep_dup
+  new_array = [] 
+  self.each do |ele| 
+    if ele.is_a?(Array) 
+      new_array << ele.deep_dup 
+    else 
+      ele 
+    end 
+  end 
+  new_array
+  end 
+
+  def dd_map 
+    self.map { |el| el.is_a(Array) ? el.dd_map :el }
+  end 
+end 
+
+
