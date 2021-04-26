@@ -73,22 +73,42 @@ p  reverse("id") # => "di"
 p  reverse("") # => ""
 
 
+# Using recursion and the is_a? method, write an Array#deep_dup method that will perform a "deep" duplication of the interior arrays. 
+
 class Array 
   def deep_dup
-  new_array = [] 
-  self.each do |ele| 
-    if ele.is_a?(Array) 
+    new_array = [] 
+    self.each do |ele| 
+      if ele.is_a?(Array) 
       new_array << ele.deep_dup 
-    else 
+      else 
       ele 
+      end 
     end 
-  end 
-  new_array
+
+    new_array
   end 
 
   def dd_map 
     self.map { |el| el.is_a(Array) ? el.dd_map :el }
   end 
+
 end 
 
 
+def fib(n) 
+  return [] if n == 0 
+  return 0 if n == 1
+
+  fibs = [0, 1] 
+  
+  while fibs.count < n 
+    fibs << fibs[-2] + fibs[-1] 
+  end 
+
+  fibs
+end 
+
+
+
+  
