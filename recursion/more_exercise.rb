@@ -47,3 +47,16 @@ end
 
 p add_to_twelve([1, 3, 3, 7])
   
+# Problem 5: You have array of integers. Write a recursive solution to determine
+# if the array is sorted. 
+
+def is_sorted?(array) 
+  return true if array.length <= 1 
+  return false if array[0] > array[1]
+  is_sorted?(array[1..-1])
+end 
+
+p is_sorted?([1, 2, 3, 7]) 
+
+
+# Write a recursive function to reverse a string. Don't use any built-in #reverse methods! 
