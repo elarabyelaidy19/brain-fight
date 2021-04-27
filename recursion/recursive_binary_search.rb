@@ -1,4 +1,5 @@
 
+  
 def bsearch(array, target )
   
   return nil if array.empty? 
@@ -21,3 +22,34 @@ def bsearch(array, target )
 end
 p bsearch([1, 3, 6, 9, 9, 12, 12, 17], 9)
       
+
+
+
+def bsearch(arr, target) 
+  return nil if arr.empty? 
+  return "not found" if !arr.include?(target) 
+
+  l = 0
+  r = arr.length - 1
+  if r >= l
+    mid = l + (r - l) / 2
+
+    # If element is present at the middle itself
+    if arr[mid] == target
+        return mid
+     
+    # If element is smaller than mid, then it
+    # can only be present in left subarray
+    elsif arr[mid] > target
+      bsearch(arr[0...mid], target)
+
+    # Else the element can only be present
+    # in right subarray
+    else
+      rsearch = bsearch(arr[mid + 1...arr.length], target) 
+      rsearch.nil? ? nil : mid + rsearch + 1
+    end
+  end 
+end  
+
+p bsearch([1, 3, 6, 9, 9, 12, 12, 17], 17) 
