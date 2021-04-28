@@ -47,7 +47,7 @@ def bsearch(arr, target)
     # in right subarray
     else
       rsearch = bsearch(arr[mid + 1...arr.length], target) 
-      rsearch.nil? ? nil : mid + rsearch + 1
+      rsearch.nil? ? nil : mid += rsearch + 1
     end
   end 
 end  
