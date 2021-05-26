@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/compare-the-triplets/problem
+
 #!/bin/ruby
 
 require 'json'
