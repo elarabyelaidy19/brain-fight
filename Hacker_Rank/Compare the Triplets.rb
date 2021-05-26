@@ -12,26 +12,26 @@ require 'stringio'
 #  2. INTEGER_ARRAY b
 #
 def solve(a0, a1, a2, b0, b1, b2)
-  # setting up target variables 
+  
   aliceScores = [a0, a1, a2]
   bobScores = [b0, b1, b2]
 
-  # output variables 
-  aliceFinal = 0 
-  bobFinal = 0
+  
+  aliceresult = 0 
+  bobresult = 0
 
   # each with index automatically starts at zero
   # aliceScore is the current score for alice with each loop
   aliceScores.each_with_index do |aliceScore, i|
     if aliceScore > bobScores[i]
-      aliceFinal += 1 
+      aliceresult += 1 
     elsif aliceScore < bobScores[i]
-      bobFinal += 1
+      bobresult += 1
     end
   end 
 
   # returns the two scores separated by a string space
-  return aliceFinal, bobFinal
+  return aliceresult, bobresult
 end 
 
 def compareTriplets(a, b)
