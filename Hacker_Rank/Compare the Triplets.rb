@@ -22,8 +22,7 @@ def solve(a0, a1, a2, b0, b1, b2)
   aliceresult = 0 
   bobresult = 0
 
-  # each with index automatically starts at zero
-  # aliceScore is the current score for alice with each loop
+  
   aliceScores.each_with_index do |aliceScore, i|
     if aliceScore > bobScores[i]
       aliceresult += 1 
@@ -32,7 +31,6 @@ def solve(a0, a1, a2, b0, b1, b2)
     end
   end 
 
-  # returns the two scores separated by a string space
   return aliceresult, bobresult
 end 
 
