@@ -9,7 +9,6 @@ require 'stringio'
 # Complete the 'plusMinus' function below.
 #
 # The function accepts INTEGER_ARRAY arr as parameter.
-#
 
 def plusMinus(arr)
     # Write your code here
@@ -32,6 +31,8 @@ def plusMinus(arr)
     puts (zeros.to_f     / arr.size).round(6)     
 
 end
+
+
 
 n = gets.strip.to_i
 
