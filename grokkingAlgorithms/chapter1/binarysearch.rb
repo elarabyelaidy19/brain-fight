@@ -1,3 +1,5 @@
+# complexity Olog(N) 
+# work with sorted list 
 
 def bsearch(array, item) 
   low = 0 
