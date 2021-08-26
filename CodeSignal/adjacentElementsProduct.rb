@@ -12,7 +12,12 @@ def adjacentElementProduct(array)
     end
     i += 1 
   end
-  
+
   return max  
 end 
 
+# another approach  
+
+def adjacentElementProduct(array) 
+  array.each_cons(2).map { |a, b| a * b }.max 
+end 
