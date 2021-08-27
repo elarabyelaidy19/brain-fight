@@ -14,3 +14,6 @@ def makeArrayConsecutive2(statues)
   end  
   
 end
+
+
+
