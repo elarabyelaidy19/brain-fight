@@ -21,4 +21,13 @@ def almostIncreasingSequence(sequence)
   end
   counter <= 1 ? true : false
   
-  end
+end 
+
+
+#  another sol 
+
+def almostIncreasingSequence(sequence) 
+  return false if sequence.each_cons(2).count { |a, b| a >= b } > 1 
+  return false if sequence.each_cons(3).count { |a, b, c| (a >= b && a >= c) || (a >= b && b >= c) || (a >= c && b >= c) } > 1 
+  return true 
+end  
