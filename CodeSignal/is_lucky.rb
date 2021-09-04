@@ -21,3 +21,19 @@ def isLucky(n)
       return false 
   end 
 end
+
+
+# second approach 
+
+def is isLucky(n) 
+  arr = n.to_s.split('').map(&:to_i) 
+  len = arr.lenght - 1 
+  mid = len / 2 
+  sum = 0
+
+  (0..mid).each do |i| 
+    sum += (arr[i] - arr[len-i]) 
+  end 
+
+  sum == 0
+end 
