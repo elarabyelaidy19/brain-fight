@@ -5,3 +5,12 @@ def are_equally_strong(yourLeft, yourRight, friendsLeft, friendsRight)
   (yourLeft == friendsLeft || yourRight == friendsLeft || yourRight == friendsRight)   
 end 
 
+# another approach 
+
+
+def are_equally_strong(yourLeft, yourRight, friendsLeft, friendsRight)
+  me = [yourLeft, yourRight] 
+  my_friend = [friendsLeft, friendsRight] 
+     
+  me.max == my_friend.max && me.min == my_friend.min
+end 
