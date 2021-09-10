@@ -25,6 +25,5 @@ def third_max(nums)
       tm 
   else 
       fm 
-  end 
-  
+  end
 end

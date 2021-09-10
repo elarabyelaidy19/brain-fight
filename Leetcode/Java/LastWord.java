@@ -1,4 +1,4 @@
-package Java;
+
 class lastWord{  
   public int LasrWordLength(String s) { 
     int lastWordLen = 0; 

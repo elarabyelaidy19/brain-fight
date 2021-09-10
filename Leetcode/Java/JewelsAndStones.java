@@ -2,7 +2,7 @@
 https://leetcode.com/problems/jewels-and-stones/ 
 */
 
-package Java;
+
 
 import java.util.HashSet;
 
