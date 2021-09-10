@@ -3,7 +3,6 @@ https://leetcode.com/problems/rectangle-overlap/
 */ 
 
 
-package Java;
 
 public class RectangleOverlap { 
   public boolean isOverlap(int[] rec1, int[] rec2) { 
