@@ -10,6 +10,7 @@ def arrayMaximalAdjacentDifference(array)
   array.each_cons(2).map { a, b| (a - b).abs }.max 
 end  
 
+# second 
 
 def arrayMaximalAdjacentDifference(array) 
   max = 0 
