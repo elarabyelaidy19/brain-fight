@@ -1,6 +1,6 @@
 # https://app.codesignal.com/arcade/intro/level-5/5xPitc3yT3dqS7XkP
 
-def boxBlur(image)
+def box_blur(image)
   x = image[0].length - 2
   y = image.length - 2
   result = Array.new(y)
