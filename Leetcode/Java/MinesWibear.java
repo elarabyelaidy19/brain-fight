@@ -34,7 +34,25 @@ class solutin {
       }
     }
     return result;
-  } 
+  }  
+
+
+  int[][] MinesWeaber2(boolean[][] matrix) { 
+      int length = matrix.length; 
+      int width = matrix[0].length; 
+      int[][] arr = new int [length][width]; 
+      
+      for(int i = 0; i < length; i++) { 
+        for(int j = 0; j < width; j++) { 
+          for(int k = i-1; k < i+2; k++) {  
+            for(int l = j-1; l < j+2; j++) { 
+              if(k > 0 && k < length && l > 0 && l < width && !(k==i && l==j) && matrix[k][l]) arr[i][j]++; 
+            }
+          }
+        }
+      }
+      return arr;
+  }
   
 
  }
