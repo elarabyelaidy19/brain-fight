@@ -6,3 +6,10 @@ def arrayReplace(array, elemToReplace, substitutionElem)
   end 
   array 
 end
+
+
+# second  
+
+def arrayReplace(array, elemToReplace, substitutionElem)
+  array.map { |x| x == elemToReplace ? substitutionElem : x } 
+end
