@@ -8,3 +8,14 @@ def evenDigitsOnly(n)
   end
   true 
 end
+
+
+
+
+def evenDigitsOnly2(n)
+  while (n > 0) 
+    return false if n % 2 == 1 
+    n /= 10 
+  end 
+  true 
+end
