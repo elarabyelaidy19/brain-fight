@@ -18,4 +18,10 @@ def evenDigitsOnly2(n)
     n /= 10 
   end 
   true 
-end
+end 
+
+
+
+def evenDigitsOnly(n) 
+  n.to_s.chars.all? { |el| el.to_i.even? } 
+end 
