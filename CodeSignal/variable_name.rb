@@ -9,7 +9,6 @@ For name = "qq-q", the output should be
 variableName(name) = false;
 For name = "2w2", the output should be
 variableName(name) = false.
- 
 =end
 
 
