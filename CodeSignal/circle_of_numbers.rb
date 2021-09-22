@@ -29,3 +29,9 @@ def circleOfNumbers(n, firstNumber)
 end 
 
 
+# Third 
+
+def circleOfNumbers(n, first_number) 
+  result = n / 2 + first_number 
+  result < n ? result : result - n 
+end
