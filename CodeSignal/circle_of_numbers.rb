@@ -20,3 +20,12 @@ def circleOfNumbers(n, firstNumber)
   return (n-n) if pair > n - 1 
   pair 
 end
+
+# second  
+
+def circleOfNumbers(n, firstNumber) 
+
+  (firstNumber + (n / 2)) % n 
+end 
+
+
