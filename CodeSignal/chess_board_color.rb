@@ -16,7 +16,7 @@ def chessBoardCellColor(cell1, cell2)
   # if EVEN && EVEN == black 
   # if ODD & EVEN == white 
   # if EVEN && ODD = white 
-  # 
+  
 
   determine_color(cell1) == determine_color(cell2)
 end
