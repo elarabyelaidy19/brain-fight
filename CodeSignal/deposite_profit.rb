@@ -23,7 +23,20 @@ def depositProfit(deposit, rate, threshold)
   
   while threshold > deposit 
       years += 1 
-      deposit += deposit * rate 
+      deposit += deposit * rate  # == deposite *= (1 + rate)
   end 
   years
+end 
+
+
+# formula  
+# deposit + (deposite * rate)^y = balance after y Year 
+
+def  
+  
+def depositProfit(deposit, rate, threshold)
+  num = Math.log(threshold.to_f / deposit) 
+  dem = Math.log(1 + (rate / 100.to_f)) 
+
+  return (num / dem).ceil
 end 
