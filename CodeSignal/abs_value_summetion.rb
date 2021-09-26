@@ -35,6 +35,7 @@ def absoluteValuesSumMinimization(a)
   idx 
 end 
 
+# two 
 
 def absoluteValuesSumMinimization(a) 
   min_diff = 100**100 
@@ -49,4 +50,11 @@ def absoluteValuesSumMinimization(a)
        end 
    end 
    x 
+end 
+
+
+# Three 
+
+def absoluteValuesSumMinimization(a) 
+  return a[(a.length - 1) / 2] 
 end 
