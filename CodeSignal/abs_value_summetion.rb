@@ -34,3 +34,19 @@ def absoluteValuesSumMinimization(a)
   end 
   idx 
 end 
+
+
+def absoluteValuesSumMinimization(a) 
+  min_diff = 100**100 
+  x = 0 
+    
+  for i in (0..a.length - 1) 
+       sum_diff =  a.map { |d| (d - a[i]).abs }.sum 
+       p sum_diff
+       if sum_diff < min_diff 
+           x = a[i]
+           min_diff = sum_diff 
+       end 
+   end 
+   x 
+end 
