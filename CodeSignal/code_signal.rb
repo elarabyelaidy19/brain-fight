@@ -115,23 +115,241 @@ end
 #####################################################################
 #####################################################################
 
+=begin
+Given a string, your task is to replace each of its characters by the next one in the English alphabet; i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+Example
+For inputString = "crazy", the output should be alphabeticShift(inputString) = "dsbaz".
+=end
+
+def alphabeticShift(inputString)
+  alpha = ("a".."z").to_a
+  new_str = "" 
+  
+  inputString.each_char do |c| 
+      new_str << "a" if c == "z"  
+      new_str << alpha[alpha.index(c) +1] if alpha[alpha.index(c)] == c && c != "z"
+  end  
+  new_str
+end
 
 
 #####################################################################
 #####################################################################
 
+# https://app.codesignal.com/arcade/intro/level-4/cC5QuL9fqvZjXJsW9 
 
+def alternating_sum(array) 
+  team_one = 0 
+  team_two = 0 
+  new_array = [] 
+
+  array.each_with_index do |idx| 
+    team_one += array[idx] if idx.even? 
+    team_two += array[idx] if idx.odd? 
+  end 
+
+  new_array << team_one << team_two 
+end 
 
 
 #####################################################################
 #####################################################################
 
+# https://app.codesignal.com/arcade/intro/level-4/xYXfzQmnhBvEKJwXP 
 
+def are_similar(a, b) 
+  indexs = [] 
+
+  a.each_with_index { |ele, i| indexs.push(i) if ele != b[i] } 
+
+  return false if indexs.length > 2 
+
+  a.sort == b.sort 
+end 
 
 #####################################################################
 #####################################################################
 
+# https://app.codesignal.com/arcade/intro/level-5/g6dc9KJyxmFjB98dL 
 
+def are_equally_strong(yourLeft, yourRight, friendsLeft, friendsRight)
+  return (yourLeft + yourRight) == (friendsLeft + friendsRight) && 
+  (yourLeft == friendsLeft || yourRight == friendsLeft || yourRight == friendsRight)   
+end 
+
+# another approach 
+
+
+def are_equally_strong(yourLeft, yourRight, friendsLeft, friendsRight)
+  me = [yourLeft, yourRight] 
+  my_friend = [friendsLeft, friendsRight] 
+     
+  me.max == my_friend.max && me.min == my_friend.min
+end 
+
+# again  
+
+def are_equally_strong(yourLeft, yourRight, friendsLeft, friendsRight) 
+  me = [yourLeft, yourRight] 
+  my_friend = [friendsLeft, friendsRight] 
+
+  me.sort == my_friend.sort 
+end 
+
+
+
+#####################################################################
+#####################################################################
+# https://app.codesignal.com/arcade/intro/level-6/mCkmbxdMsMTjBc3Bm
+
+def arrayReplace(array, elemToReplace, substitutionElem)
+  for el in (0...array.length) 
+      array[el] = substitutionElem if array[el] == elemToReplace 
+  end 
+  array 
+end
+
+
+# second  
+
+def arrayReplace(array, elemToReplace, substitutionElem)
+  array.map { |x| x == elemToReplace ? substitutionElem : x } 
+end
+#####################################################################
+#####################################################################
+# https://app.codesignal.com/arcade/intro/level-5/XC9Q2DhRRKQrfLhb5 
+# You are given an array of integers representing coordinates of obstacles situated on a straight line.
+# Assume that you are jumping from the point with coordinate 0 to the right. You are allowed only to make jumps of the same length represented by some integer.
+# Find the minimal length of the jump enough to avoid all the obstacles.
+# Example
+# For inputArray = [5, 3, 6, 7, 9], the output should be
+# avoidObstacles(inputArray) = 4.
+# Check out the image below for better understanding:
+
+
+def avoid_obstacles(array) 
+  i = 0 
+  jump = 1 
+
+  while array.length  > i  
+    if array[i] % jump == 0 
+      i = 0 
+      jump += 1 
+    else 
+      i += 1 
+    end 
+  end 
+  jump
+end 
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-5/5xPitc3yT3dqS7XkP
+
+def box_blur(image)
+  x = image[0].length - 2
+  y = image.length - 2
+  result = Array.new(y)
+  
+  for i in 0...y
+      result[i] = Array.new(x)
+      for j in 0...x
+          result[i][j] = image[i][j] + image[i][j+1] + image[i][j+2] +
+                    image[i+1][j] + image[i+1][j+1] + image[i+1][j+2] +
+                    image[i+2][j] + image[i+2][j+1] + image[i+2][j+2]
+          result[i][j] = (result[i][j] / 9).floor
+      end
+  end
+  return result
+end 
+
+#####################################################################
+#####################################################################
+=begin 
+Given two cells on the standard chess board, determine whether they have the same color or not.
+
+Example
+
+For cell1 = "A1" and cell2 = "C3", the output should be
+chessBoardCellColor(cell1, cell2) = true.
+
+For cell1 = "A1" and cell2 = "H3", the output should be
+chessBoardCellColor(cell1, cell2) = false.
+
+
+=end 
+def chessBoardCellColor(cell1, cell2)
+  # if ODD && ODD == black 
+  # if EVEN && EVEN == black 
+  # if ODD & EVEN == white 
+  # if EVEN && ODD = white 
+  
+
+  determine_color(cell1) == determine_color(cell2)
+end
+
+def determine_color(cell)
+  hash = {} 
+  
+  ("A".."H").to_a.each_with_index do |char, idx| 
+      hash[char] = idx + 1 
+  end 
+
+  color = "white"
+
+  if hash[cell[0]] % 2 == 0 && cell[1].to_i % 2 == 0 ||
+         hash[cell[0]] % 2 != 0 && cell[1].to_i % 2 != 0 
+      color = "black"
+  end 
+
+  color 
+end 
+#####################################################################
+#####################################################################
+=beging 
+
+Consider integer numbers from 0 to n - 1 written down along the circle in such a way that the distance between any two neighboring numbers is equal (note that 0 and n - 1 are neighboring, too).
+
+Given n and firstNumber, find the number which is written in the radially opposite position to firstNumber.
+
+Example
+
+For n = 10 and firstNumber = 2, the output should be
+circleOfNumbers(n, firstNumber) = 7.
+
+=end 
+
+def circleOfNumbers(n, firstNumber)
+  pair = 0
+  pair = (firstNumber + ((n / 2))).abs 
+  if pair > n  
+      pair = (firstNumber - ((n / 2))).abs  
+  end 
+  return (n-n) if pair > n - 1 
+  pair 
+end
+
+# second  
+
+def circleOfNumbers(n, firstNumber) 
+
+  (firstNumber + (n / 2)) % n 
+end 
+
+
+# Third 
+
+def circleOfNumbers(n, first_number) 
+  result = n / 2 + first_number 
+  result < n ? result : result - n 
+end
+#####################################################################
+#####################################################################
+
+
+#####################################################################
+#####################################################################
 
 
 #####################################################################
