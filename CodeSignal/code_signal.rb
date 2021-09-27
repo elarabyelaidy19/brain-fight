@@ -347,15 +347,294 @@ end
 #####################################################################
 #####################################################################
 
+# https://app.codesignal.com/arcade/intro/level-3/JKKuHJknZNj4YGL32 
+
+def common_char_count(s1, s2) 
+  count = 0 
+
+  s1.each_char do |c| 
+    cout += 1 if s2.include?(c) && s2[c] = "" 
+  end 
+
+  count 
+end 
+
+#####################################################################
+#####################################################################
+
+=begin 
+
+You have deposited a specific amount of money into your bank account. Each year your balance increases at the same growth rate. With the assumption that you don't make any additional deposits, find out how long it would take for your balance to pass a specific threshold.
+
+Example
+
+For deposit = 100, rate = 20, and threshold = 170, the output should be
+depositProfit(deposit, rate, threshold) = 3.
+
+Each year the amount of money in your account increases by 20%. So throughout the years, your balance would be:
+
+year 0: 100;
+year 1: 120;
+year 2: 144;
+year 3: 172.8.
+Thus, it will take 3 years for your balance to pass the threshold, so the answer is 3.
+=end 
+
+
+def depositProfit(deposit, rate, threshold)
+  years = 0 
+  rate = rate / 100.to_f 
+  
+  while threshold > deposit 
+      years += 1 
+      deposit += deposit * rate  # == deposite *= (1 + rate)
+  end 
+  years
+end 
+
+
+# formula  
+# deposit + (deposite * rate)^y = balance after y Year 
+
+def  
+  
+def depositProfit(deposit, rate, threshold)
+  num = Math.log(threshold.to_f / deposit) 
+  dem = Math.log(1 + (rate / 100.to_f)) 
+
+  return (num / dem).ceil
+end 
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-6/6cmcmszJQr6GQzRwW 
+
+def evenDigitsOnly(n)
+  p nums = n.to_s.split("") 
+  
+  for i in (0..nums.length - 1) 
+      return false if nums[i].to_i % 2 != 0 
+  end
+  true 
+end
+
+
+
+
+def evenDigitsOnly2(n)
+  while (n > 0) 
+    return false if n % 2 == 1 
+    n /= 10 
+  end 
+  true 
+end 
+
+
+
+def evenDigitsOnly(n) 
+  n.to_s.chars.all? { |el| el.to_i.even? } 
+end 
+
 
 #####################################################################
 #####################################################################
 
 
+def isIPv4Address(string)
+  
+  return false if string.count('.') != 3
+  arr = string.split('.')   
+  return false if arr.length < 4 || arr.include?("")  
+  
+    for i in (0..arr.length - 1) 
+      return false if (arr[i].to_i > 255 || arr[i].to_i <= 0)  
+      return false if arr[i].count("a-zA-Z") > 0 
+    end  
+  true 
+end
+
+# second 
+
+def isIPv4Address(string)  
+  return false if string.count(".") != 3 
+  string.split('.').each { |x| return false if x.to_i.to_s != x || x.to_i > 255 } 
+  true 
+end 
+
 #####################################################################
 #####################################################################
 
+# https://app.codesignal.com/arcade/intro/level-3/3AdBC97QNuhF6RwsQ 
 
+def isLucky(n)
+  arr = n.to_s.split('').map(&:to_i)
+  len = arr.size - 1 
+  mid  = len / 2
+  l = 0 
+  r = 0
+  
+  for i in (0..len) 
+      if i <= mid 
+          l += arr[i].to_i 
+      else 
+          r += arr[i].to_i 
+      end  
+  end  
+  
+  if l == r 
+      return true 
+  else 
+      return false 
+  end 
+end
+
+
+# second approach 
+
+def is isLucky(n) 
+  arr = n.to_s.split('').map(&:to_i) 
+  len = arr.lenght - 1 
+  mid = len / 2 
+  sum = 0
+
+  (0..mid).each do |i| 
+    sum += (arr[i] - arr[len-i]) 
+  end 
+
+  sum == 0
+end 
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-2/bq2XnSr5kbHqpHGJC 
+
+def makeArrayConsecutive2(statues)
+  length = statues.length - 1 
+  smallest = statues.min 
+  biggest = statues.max 
+  
+  actualLength = (biggest - smallest) 
+  
+  if actualLength == length 
+      return 0 
+  else 
+      actualLength - length 
+  end  
+  
+end
+
+
+
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-2/xskq4ZxLyqQMCLshr 
+
+def matrixElementsSum(matrix)
+  result = 0
+  for i in (0..(matrix[0].size-1))
+      for j in (0..(matrix.size-1))
+          current = matrix[j][i]
+          break if  current == 0
+          result += current
+      end 
+  end
+  result
+end
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-5/EEJxjQ7oo7C5wAGjE
+
+# Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+
+## Example
+# For inputArray = [2, 4, 1, 0], the output should be
+# arrayMaximalAdjacentDifference(inputArray) = 3.# 
+
+def arrayMaximalAdjacentDifference(array) 
+  array.each_cons(2).map { |a, b| (a - b).abs }.max 
+end  
+
+# second 
+
+def arrayMaximalAdjacentDifference(array) 
+  max = 0 
+
+  for i in (1...array.length) 
+    diff = array[i] - array[i-1] 
+    diff = diff.abs 
+    max = diff if diff > max 
+  end 
+  max  
+end 
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-5/ZMR5n7vJbexnLrgaM 
+
+def mines_weeper(matrix) 
+  result = Array.new(matrix.length) { Array.new(matrix[0].length, 0) } 
+
+  matrix.each_with_index do |row, r| 
+    row.each_with_index do |col, c| 
+      if col then
+        (r-1..r+1).each do |r2| 
+          next if r2 < 0 || r2 > matrix.length - 1 
+          (c-1..c+1).each do |c2| 
+            next if c2 < 0 || c2 > row.length -1 
+            result[r2][c2] += 1 if !(r2 == r && c2 == c) 
+          end 
+        end 
+      end 
+    end 
+  end 
+  result 
+end 
+
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-4/Xfeo7r9SBSpo3Wico 
+require 'set' 
+def plindrome_rearranging(string) 
+  set = Set.new 
+
+  string.each_char do |ch| 
+    char = string[ch] 
+    if set.include?(char) 
+      set.delete(char) 
+    else  
+      set.add(char) 
+    end 
+  end 
+
+  set.length <= 1 ? true : false 
+end 
+#####################################################################
+#####################################################################
+
+#####################################################################
+#####################################################################
+
+#####################################################################
+#####################################################################
+
+#####################################################################
+#####################################################################
+
+#####################################################################
+#####################################################################
 
 # https://app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN  
 
