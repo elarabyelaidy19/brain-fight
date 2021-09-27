@@ -621,17 +621,92 @@ def plindrome_rearranging(string)
 
   set.length <= 1 ? true : false 
 end 
-#####################################################################
-#####################################################################
 
 #####################################################################
 #####################################################################
 
-#####################################################################
-#####################################################################
+# https://app.codesignal.com/arcade/intro/level-3/9DgaPsE2a7M6M2Hu6 
+
+def reverse_parenthes(str) 
+  return str if !str.include?("(") 
+  pairs = str.count("(") 
+  left = 0
+
+  str.chars.each_with_index do |char, idx| 
+    if char == "(" 
+      pairs -= 1 
+      p pairs
+      if pairs == 0 
+        left = idx 
+        p left
+      end 
+    end
+  end 
+
+  right1 = str[left..-1].index(")")
+  p right1
+  right = right1 + left 
+  p right
+  str[left..right] = str[(left + 1)..(right - 1)].reverse
+
+  reverse_parenthes(str)
+
+end 
 
 #####################################################################
 #####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-2/yuGuHvcCaFCKk56rJ 
+
+def shapeArea(n) 
+  area = (n*n) + ( (n-1) * (n-1) ) 
+end 
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-3/D6qmdBL2NYz49XHwM  
+
+def sort_by_height(arr) 
+  len = arr.lenght - 1 
+  for i in (0..len) 
+    if arr[i] > -1 
+      for j in (0..len) 
+        if (arr[j] > -1 && arr[j] > arr[i]) 
+          arr[j], arr[i] = arr[i], arr[j] 
+        end 
+      end 
+    end 
+  end 
+
+  arr 
+end 
+
+#####################################################################
+#####################################################################
+
+=begin
+Correct variable names consist only of English letters, digits and underscores and they can't start with a digit.
+Check if the given string is a correct variable name.
+
+Example
+For name = "var_1__Int", the output should be
+variableName(name) = true;
+For name = "qq-q", the output should be
+variableName(name) = false;
+For name = "2w2", the output should be
+variableName(name) = false.
+=end
+
+
+def variable_name(name) 
+  return false if /\d/.match(name[0]) 
+
+  name.each_char do |c| 
+    return false unless /[a-zA-Z]/.match(c) || /\d/.match(c) || c == "_" 
+  end 
+  true 
+end 
 
 #####################################################################
 #####################################################################
