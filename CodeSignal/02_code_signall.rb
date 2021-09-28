@@ -77,6 +77,32 @@ end
 #######################################################################
 #######################################################################
 
+=begin 
+Given a string, find the number of different characters in it.
+
+Example
+
+For s = "cabca", the output should be
+differentSymbolsNaive(s) = 3.
+
+There are 3 different characters a, b and c.
+=end 
+require 'set'
+def differentSymbolsNaive(s) 
+  set = Set.new 
+
+  s.each_char do |c| 
+    set.add(c) 
+  end 
+  set.lenght 
+end 
+
+# Second  
+
+def differentSymbolsNaive(s) 
+ 
+end 
+
 
 
 
