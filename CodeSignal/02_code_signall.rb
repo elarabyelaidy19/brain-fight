@@ -100,7 +100,9 @@ end
 # Second  
 
 def differentSymbolsNaive(s) 
- 
+  chars = [] 
+  s.chars.map { |c| chars << c if chars.include?(c) == false } 
+  chars.length 
 end 
 
 
