@@ -105,6 +105,12 @@ def differentSymbolsNaive(s)
   chars.length 
 end 
 
+# Third 
+
+def differentSymbolsNaive(s) 
+  s.chars.uniq.size 
+end 
+
 
 
 
