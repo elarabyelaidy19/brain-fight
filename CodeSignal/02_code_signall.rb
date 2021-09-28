@@ -71,6 +71,7 @@ firstDigit(inputString) = '0'.
 def firstDigit(string) 
   /[0-9]/.match(string)
   string.match(/\d/)
+  string.scan(/\d/)[0]
 end
 
 
