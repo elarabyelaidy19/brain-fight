@@ -177,6 +177,7 @@ growingPlant(upSpeed, downSpeed, desiredHeight) = 10.
 
 =end 
 
+# one 
 def growingPlant(up, down, desiredHeight) 
   days = 1 
   decrease = up 
@@ -188,6 +189,13 @@ def growingPlant(up, down, desiredHeight)
   days 
 end 
 
+
+def growingPlant(up, down, desiredHeight) 
+  return 1 if up > desiredHeight 
+  ((desiredHeight - down).fdiv(up - down)).ceil 
+  # fdiv return floating point div 
+  # ceil return approxaimate value  
+end
 
 #######################################################################
 #######################################################################
