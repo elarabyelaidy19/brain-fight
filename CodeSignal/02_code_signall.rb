@@ -189,6 +189,19 @@ def growingPlant(up, down, desiredHeight)
   days 
 end 
 
+def growingPlant(up, down, desiredHeight) 
+  days = 0 
+  decrease = 0 
+
+  while desiredHeight > decrease 
+    decrease += up     
+    days += 1 
+    return days if decrease >= desiredHeight 
+    decrease -= down
+  end 
+  days 
+end 
+
 
 def growingPlant(up, down, desiredHeight) 
   return 1 if up > desiredHeight 
