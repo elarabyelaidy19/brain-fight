@@ -282,6 +282,27 @@ def longestDigitsPrefix(s)
   nums 
 end 
 
+## two 
+
+
+def longestDigitsPrefix(s) 
+  nums = ""
+   
+  for i in 0...s.length 
+      if is_digit(s[i]) 
+          nums += s[i] 
+      else  
+          break
+      end 
+  end 
+  nums
+end 
+
+def is_digit(c) 
+  code = c.ord 
+  48 <= code && code <= 57  ## numbers in ascii 
+end 
+
 #######################################################################
 #######################################################################
 
