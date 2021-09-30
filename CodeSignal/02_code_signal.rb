@@ -260,9 +260,27 @@ end
 
 #######################################################################
 #######################################################################
+=begin 
+Given a string, output its longest prefix which contains only digits.
 
+Example
 
+For inputString = "123aa1", the output should be
+longestDigitsPrefix(inputString) = "123".
+=end 
 
+def longestDigitsPrefix(s) 
+  nums = "" 
+
+  s.each_char do |c| 
+    unless /\d/.match(c) 
+      break 
+    else
+      nums += c 
+    end 
+  end 
+  nums 
+end 
 
 #######################################################################
 #######################################################################
