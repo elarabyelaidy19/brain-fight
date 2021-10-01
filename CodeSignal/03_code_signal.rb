@@ -19,6 +19,8 @@ digitDegree(n) = 2.
 9 + 1 = 10 -> 1 + 0 = 1. 
 =end 
 
+# one 
+
 def digitDegree(n)  
   i = 0 
 
@@ -37,4 +39,17 @@ def sum_digits(n)
     n /= 10 
   end 
   sum 
+end 
+
+# two 
+
+def digitDegree(n)
+  return 0 if n / 10 == 0 
+  num = 0
+  while n != 0
+      num += n % 10 
+      n /= 10 
+  end 
+  
+  1 + digitDegree(num)
 end 
