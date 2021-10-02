@@ -68,6 +68,14 @@ The bishop has no restrictions in distance for each move, but is limited to diag
 Check out the example below to see how it can move:
 =end 
 
+def  bishopAndPawn(bishop, pawn) 
+  p x1 = bishop[0].ord # "a".ord == 97
+  p y1 = bishop[1].to_i # "1".to_i == 1 
+  p x2 = pawn[0].ord      # "c".ord == 99 
+  p y2 = pawn[1].to_i     # "3".to_i == 3
+
+  (x2 - x1).abs == (y2 - y1).abs  ## increasing occur at equal rate in both direction
+end 
 
 ########################################################
 ########################################################
