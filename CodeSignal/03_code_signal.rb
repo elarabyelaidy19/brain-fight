@@ -126,6 +126,29 @@ def beautiful_string?(s)
 end 
 
 
+# two 
+
+def beautiful_string?(s) 
+  count = [0] * 26 # [0, 0, ......]
+  len = s.length - 1 
+
+  (0..len).each do |i| ### bbbaa 
+    # count [x] = b.ord - 'a'.ord = 98 - 97 = 1 index[1] += 1 
+    # count[1] = 1     ## b#bbaa   
+    # count[x] = b.ord - 'a'.ord = 98 - 97 = 1 index[1] += 1 
+    # count[1] = 2 .... 
+    count[s[i].ord - 'a'.ord] += 1   
+  end
+
+  for j in (0...count.length - 1) 
+    return false if count[j-1] < count[j] 
+  end 
+  return true 
+end 
+
+
+
+end 
 ########################################################
 ########################################################
 
