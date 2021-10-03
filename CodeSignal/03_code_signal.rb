@@ -172,7 +172,10 @@ def findEmailDomain(address)
 end
 
 # two  
-
+def findEmailDomain(address)
+  array_split = address.split("@") 
+  array_split.last
+end 
 
 ########################################################
 ########################################################
