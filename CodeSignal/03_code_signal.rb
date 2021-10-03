@@ -80,7 +80,44 @@ end
 ########################################################
 ########################################################
 
-########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-10/PHSQhLEw3K2CmhhXE/solutions 
+A string is said to be beautiful if each letter in the string appears at most as many times as the previous 
+letter in the alphabet within the string; ie: b occurs no more times than a;
+c occurs no more times than b; etc. Note that letter a has no previous letter.
+=end 
+
+def beautiful_string?(s) 
+  hash = {} 
+  len = s.length - 1 
+
+  (0..len).each do |i| 
+    current = s[i] 
+    p hash[current]
+    if hash[current]
+      hash[current] += 1 
+    else 
+      hash[current] = 1 
+    end 
+  end 
+
+  letters = ('a'..'z').to_a 
+  lett_len = letters.length - 1 
+
+  (0..lett_len).each do |i| 
+    letter = letters[i] 
+    next_letter = letters[i+1] 
+
+    cl = hash[letter].to_i 
+    nl = hash[next_letter].to_i 
+
+    if cl < nl 
+      return false  
+    end 
+  end 
+  return true 
+end 
+  ########################################################
 ########################################################
 
 ########################################################
