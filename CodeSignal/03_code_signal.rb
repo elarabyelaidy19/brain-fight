@@ -206,7 +206,7 @@ def buildPalindrome(st)
 
   (0...len).each do |c| 
     break if st == st.reverse
-    st = st.insert(len, c) 
+    st = st.insert(len, c) # insert start at index len 
   end 
   st 
 end 
