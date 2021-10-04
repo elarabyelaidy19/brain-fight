@@ -199,6 +199,17 @@ def buildPalindrome(st)
   end 
 end 
 
+# two 
+
+def buildPalindrome(st) 
+  len = st.length 
+
+  (0...len).each do |c| 
+    break if st == st.reverse
+    st = st.insert(len, c) 
+  end 
+  st 
+end 
 
 ########################################################
 ########################################################
