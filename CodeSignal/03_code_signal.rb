@@ -179,6 +179,26 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-10/ppZ9zSufpjyzAsSEx
+Given a string, find the shortest possible string which can be achieved by adding characters
+to the end of initial string to make it a palindrome.
+
+Example
+
+For st = "abcdc", the output should be
+buildPalindrome(st) = "abcdcba".
+=end 
+
+def buildPalindrome(st) 
+  len = st.length
+  temp = ""
+  (0...len).each do |i| 
+    temp = st + st[0...i].reverse # reverse extra chars to meet plindronme
+    return temp if temp == temp.reverse # return  if the the iterations genertate plindrome  
+  end 
+end 
+
 
 ########################################################
 ########################################################
