@@ -213,7 +213,40 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-10/8RiRRM3yvbuAd3MNg 
+Elections are in progress!
 
+Given an array of the numbers of votes given to each of the candidates so far,
+and an integer k equal to the number of voters who haven't cast their vote yet,
+find the number of candidates who still have a chance to win the election.
+
+The winner of the election must secure strictly more votes than any other candidate.
+If two or more candidates receive the same (maximum) number of votes, assume there is no winner at all.
+=end 
+def electionsWinners(votes, k)
+  winner = votes.max 
+  winners = 0 
+  
+  
+  if k == 0
+      # in case there is no voters(k) and there is number of equal candidate return 0
+      return 0 if votes.count(winner) > 1
+      # if there is no voters return 1 the max voted candidate 
+      return 1 if k == 0 
+  end  
+  
+  votes.each do |cand| 
+      if cand + k > winner 
+          winners += 1 
+      end 
+  end 
+  winners
+end
+
+
+
+end 
 ########################################################
 ########################################################
 
