@@ -289,6 +289,13 @@ isDigit(symbol) = false.
 def isDigit(ch) 
   ch.ord.between?(48, 57) 
 end 
+
+#two 
+def isDigit(ch) 
+  return true if /\d/.match(ch) 
+  false
+end 
+
 ########################################################
 ########################################################
 
