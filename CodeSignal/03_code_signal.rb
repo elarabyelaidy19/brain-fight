@@ -274,7 +274,21 @@ def is_mac_address(string)
 end 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-11/Zr2XXEpkBPtYWqPJu
+Determine if the given character is a digit or not.
 
+Example
+
+For symbol = '0', the output should be
+isDigit(symbol) = true;
+For symbol = '-', the output should be
+isDigit(symbol) = false.
+=end 
+
+def isDigit(ch) 
+  ch.ord.between?(48, 57) 
+end 
 ########################################################
 ########################################################
 
