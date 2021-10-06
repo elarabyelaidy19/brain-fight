@@ -227,8 +227,7 @@ If two or more candidates receive the same (maximum) number of votes, assume the
 def electionsWinners(votes, k)
   winner = votes.max 
   winners = 0 
-  
-  
+
   if k == 0
       # in case there is no voters(k) and there is number of equal candidate return 0
       return 0 if votes.count(winner) > 1
@@ -244,12 +243,35 @@ def electionsWinners(votes, k)
   winners
 end
 
+# two 
 
+def electionsWinners(votes, k) 
+  
+
+########################################################
+########################################################
+
+=begin 
+https://app.codesignal.com/arcade/intro/level-10/HJ2thsvjL25iCvvdm 
+A media access control address (MAC address) is a unique identifier assigned to 
+network interfaces for communications on the physical network segment.
+
+The standard (IEEE 802) format for printing MAC-48 addresses in human-friendly 
+form is six groups of two hexadecimal digits (0 to 9 or A to F), 
+separated by hyphens (e.g. 01-23-45-67-89-AB).
+=end 
+
+def is_mac_address(string) 
+  return false if string.length > 17 
+  nums = ("0".."9").to_a 
+  alph = ("A".."F").to_a 
+  array = string.split("-") 
+  return false if array.length != 6 
+  return false if array.any? { |c| c.length != 2 } 
+
+  array.all? {|c| nums.include?(c[0]) || alph.include?(c[0]) && nums.include?(c[1]) || alph.include?(c[1]) }
 
 end 
-########################################################
-########################################################
-
 ########################################################
 ########################################################
 
