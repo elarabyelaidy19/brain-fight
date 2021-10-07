@@ -385,4 +385,24 @@ def deleteDigit(n)
   max 
 end 
 
+# two 
+
+def deleteDigit(n)
+  max = 0 
+  n = n.to_s 
+  len = n.length - 1 
+  
+  for i in (0..len) 
+      if i == 0 
+          slide = n[1..-1].to_i
+          max = slide if slide > max 
+      elsif i == len
+          p slide = n[0..-2].to_i 
+          max = slide if slide > max 
+      else 
+          p slide = (n[0..i-1] + n[i+1..-1]).to_i 
+          max = slide if slide > max
+      end 
+  end
+  max
 end
