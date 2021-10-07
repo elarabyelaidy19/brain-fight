@@ -421,10 +421,17 @@ def longestWord(text)
   max
 end 
 
+# two 
+
 def longestWord(text)
   words = text.scan(/[a-zA-Z]+/) # == #split(/\W|_/) 
   words.max_by(&:lenght)
 end 
+
+# three  
+def longestWord(text)
+  text.split(/\W/).sort {|a,b| a.length <=> b.length}.last
+end
 
 ########################################################
 ########################################################
