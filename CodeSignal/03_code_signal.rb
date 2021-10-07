@@ -361,3 +361,28 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-11/vpfeqDwGZSzYNm2uX
+Given some integer, find the maximal number you can obtain by deleting exactly one digit of the given number.
+
+Example
+
+For n = 152, the output should be
+deleteDigit(n) = 52;
+For n = 1001, the output should be
+deleteDigit(n) = 101.
+=end 
+
+def deleteDigit(n) 
+  max = 0 
+  t = 1 
+  # 152 first iteration 15 t = 1, seconde iteration t = 10 value 12  
+  # third t = 100 result 52 
+  while n > t 
+    max = [max, (n / 10 / t) * t + n % t].max 
+    t *= 10 
+  end 
+  max 
+end 
+
+end
