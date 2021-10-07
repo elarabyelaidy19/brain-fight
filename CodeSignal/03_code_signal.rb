@@ -334,5 +334,24 @@ end
 
 ########################################################
 ########################################################
-
-
+def chessKnight(cell)
+    moves = 8 
+    
+    # a1
+    if cell[0] == 'b' || cell[0] == 'g' 
+        moves -= 2 
+    end
+    if cell[1] == '7' || cell[1] == '2' 
+        moves -= 2
+    end
+    if cell[0] == 'a' || cell[0] == 'h'
+        moves /= 2 
+      # moves become 4 because 'a' and move to cell[1]
+    end 
+    if cell[1] == '1' || cell[1] == '8' 
+        moves /= 2  
+      # moves become 4 / 2 because 1 and  exit return 2 
+    end 
+     
+    return moves
+end
