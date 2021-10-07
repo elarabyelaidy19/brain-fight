@@ -410,7 +410,16 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-12/s9qvXv4yTaWg8g4ma 
+Define a word as a sequence of consecutive English letters. Find the longest word from the given string.
 
+Example
+
+For text = "Ready, steady, go!", the output should be
+longestWord(text) = "steady". 
+
+=end
 def longestWord(text)
   words = text.scan(/[a-zA-Z]+/) # == #split(/\W|_/) 
   max = "" 
