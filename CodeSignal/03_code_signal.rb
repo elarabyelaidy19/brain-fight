@@ -468,6 +468,13 @@ def validTime(time)
   true
 end
 
+def validTime(time)
+  # return false unless time.include?(":")
+  num = time.split(":").map(&:to_i) 
+  return num[0].between?(0,23) && num[1].between?(0,59)
+end
+
+
 
 ########################################################
 ########################################################
