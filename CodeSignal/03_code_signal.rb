@@ -376,7 +376,7 @@ deleteDigit(n) = 101.
 def deleteDigit(n) 
   max = 0 
   t = 1 
-  # 152 first iteration 15 t = 1, seconde iteration t = 10 value 12  
+  # 152 first iteration value 15 t = 1, seconde iteration t = 10 value 12  
   # third t = 100 result 52 
   while n > t 
     max = [max, (n / 10 / t) * t + n % t].max 
@@ -444,7 +444,33 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-12/ywMyCTspqGXPWRZx5 
+Check if the given string is a correct time representation of the 24-hour clock.
 
+Example
+
+For time = "13:58", the output should be
+validTime(time) = true;
+For time = "25:51", the output should be
+validTime(time) = false;
+For time = "02:76", the output should be
+validTime(time) = false.
+=end
+
+def validTime(time)
+  # return false unless time.include?(":")
+  num = time.split(":") 
+  p num 
+  num.each do |i| 
+      return num[0].to_i.between?(0,23) && num[1].to_i.between?(0,59)
+  end 
+  true
+end
+
+
+########################################################
+########################################################
 ########################################################
 ########################################################
 
