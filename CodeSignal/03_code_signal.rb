@@ -478,6 +478,37 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-12/YqZwMJguZBY7Hz84T 
+elp Ratiorg by writing a function that returns the sum of numbers that appear in the given inputString.
+
+Example
+
+For inputString = "2 apples, 12 oranges", the output should be
+sumUpNumbers(inputString) = 14.
+=end 
+
+def sumUpNumbers(s) 
+  sum = 0 
+  str = "" 
+  s += "a" # add one digit 
+  nums = ("0".."9").to_a 
+  len = s.lenght - 1 
+
+  for i in 0..len 
+    c = s[i] 
+    if nums.include?(c) 
+      str += c   
+    else 
+      if str.lenght > 0 
+        sum += str.to_i 
+        str = "" 
+      end 
+    end 
+  end 
+  sum 
+end  
+
 ########################################################
 ########################################################
 
