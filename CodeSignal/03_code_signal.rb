@@ -519,6 +519,33 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-12/fQpfgxiY6aGiGHLtv 
+Given a rectangular matrix containing only digits, calculate the number of different 2 × 2 squares in it.
+
+Example
+For
+matrix = [[1, 2, 1],
+          [2, 2, 2],
+          [2, 2, 2],
+          [1, 2, 3],
+          [2, 2, 1]]
+the output should be
+differentSquares(matrix) = 6.
+
+=end 
+def differentSquares(matrix) 
+  x = matrix.length - 2 
+  y = matrix[0].length - 2 
+  squares = [] 
+
+  for i in (0..x) 
+    for j in (0..y) 
+      squares << [matrix[i][j], matrix[i][j+1], matrix[i+1][j], matrix[i+1][j+1]] 
+    end 
+  end 
+  squares.uniq.lenght 
+end 
 
 
 ########################################################
