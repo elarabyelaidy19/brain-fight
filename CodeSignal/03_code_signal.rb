@@ -547,6 +547,23 @@ def differentSquares(matrix)
   squares.uniq.lenght 
 end 
 
+# two 
+
+require 'set'
+def differentSquares(matrix)
+  x = matrix.length - 1 
+  y = matrix[0].length - 1 
+  set = Set.new
+
+  for i in (0...x) 
+    for j in (0...y) 
+      set.add(([matrix[i][j], matrix[i][j+1], matrix[i+1][j], matrix[i+1][j+1]]).to_s)
+    end 
+  end 
+  set.length
+    
+end
+
 
 ########################################################
 ########################################################
