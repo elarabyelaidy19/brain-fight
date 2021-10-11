@@ -604,5 +604,16 @@ def mult_digits(n)
   end 
   mul 
 end 
+
+# two 
+
+def digitsProduct(product) 
+  return 10 if product == 0
+  (0..10000).each do |i| 
+    products = i.digits.reduce(&:*) 
+    return i if products == product 
+  end 
+  -1 
+end 
 ########################################################
 ########################################################
