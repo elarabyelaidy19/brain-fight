@@ -567,7 +567,42 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-12/NJJhENpgheFRQbPRA 
+Given an integer product, find the smallest positive (i.e. greater than 0) integer the product of whose digits is equal to product.
+If there is no such integer, return -1 instead.
 
+Example
 
+For product = 12, the output should be
+digitsProduct(product) = 26;
+For product = 19, the output should be
+digitsProduct(product) = -1.
+=end
+
+def digitsProduct(product) 
+  # Edge cases
+  return 10 if product == 0
+  return product if product < 10 
+  # Constrains
+  max = 10000
+  for current in (0..max)
+      digitsProduct = mult_digits(current) 
+      return current if digitsProduct == product  
+  
+  end 
+  return -1
+
+end 
+
+def mult_digits(n) 
+  mul = 1 
+
+  while n != 0 
+      mul *= n % 10 
+      n /= 10 
+  end 
+  mul 
+end 
 ########################################################
 ########################################################
