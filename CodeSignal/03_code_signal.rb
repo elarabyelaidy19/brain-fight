@@ -652,3 +652,20 @@ def filenames(names)
   res 
 end   
 
+# Two 
+
+def filenames(names) 
+  res = [] 
+
+  names.each do |name| 
+    suffix = "" 
+    cnt = 1 
+    while res.include?(name + suffix) 
+      suffix = "(#{cnt})" 
+      cnt += 1 
+    end 
+
+    res << (name + suffix) 
+  end 
+  res 
+end 
