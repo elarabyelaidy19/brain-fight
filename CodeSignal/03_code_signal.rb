@@ -718,4 +718,42 @@ end
 
 ########################################################
 ########################################################
+=begin 
+https://app.codesignal.com/arcade/intro/level-12/tQgasP8b62JBeirMS 
 
+# Valid suduku 
+Sudoku is a number-placement puzzle. The objective is to fill a 9 × 9 grid with digits so that each column, 
+each row, and each of the nine 3 × 3 sub-grids that compose the grid contains all of the digits from 1 to 9.
+
+This algorithm should check if the given grid of numbers represents a correct solution to Sudoku.
+=end
+require 'set'
+
+def sudoku(grid)
+  n = 9
+  
+  rows    = Array.new(n) { Set.new }
+  cols    = Array.new(n) { Set.new }
+  squares = Array.new(n) { Set.new }
+
+  i = 0
+  while i < n do
+    j = 0
+    while j < n do
+      num = grid[i][j]
+      
+      rows[i].add(num)
+      cols[j].add(num)
+      
+      sqr_r = i / 3
+      sqr_c = j / 3
+      
+      squares[sqr_r * 3 + sqr_c].add(num)
+      j = j + 1
+    end
+    
+    i = i + 1
+  end
+  
+  (0..(n - 1)).all? { |x| rows[x].size == n && cols[x].size == n && squares[x].size == n }
+end
