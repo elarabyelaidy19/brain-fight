@@ -686,3 +686,30 @@ Other letters can be obtained in the same manner.
 def messageFromBinaryCode(code)
   code.chars.each_slice(8).to_a.map{|l| l.join("").to_i(2).chr}.join("")
 end
+
+# TWO
+
+def messageFromBinaryCode(code)
+  i = 0
+  binary = 0
+  value = 0
+  string = ""
+  start = 128
+  while i < code.length
+      if binary < 7
+          value += code[i].to_i*start
+          start /= 2
+      else
+          value += code[i].to_i*start
+          string += value.chr
+          binary_code = ""
+          value = 0
+          start = 128
+          binary = -1
+      end
+      binary += 1
+      i += 1
+  end
+  
+  return string
+end
