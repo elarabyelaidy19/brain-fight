@@ -7,7 +7,8 @@ to obtain a strictly increasing sequence from the input.
 Example
 
 For inputArray = [1, 1, 1], the output should be
-arrayChange(inputArray) = 3. 
+arrayChange(inputArray) = 3.  
+
 =end 
 
 def array_change(array) 
@@ -26,8 +27,13 @@ end
 
 #####################################################################
 #####################################################################
+=begin 
+# https://app.codesignal.com/arcade/intro/level-4/xYXfzQmnhBvEKJwXP  
+Two arrays are called similar if one can be obtained from another by swapping at 
+most one pair of elements in one of the arrays.
 
-# https://app.codesignal.com/arcade/intro/level-4/xYXfzQmnhBvEKJwXP 
+Given two arrays a and b, check whether they are similar.
+=end
 
 def are_similar(a, b) 
   indexs = [] 
