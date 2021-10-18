@@ -61,3 +61,19 @@ def are_similar(a, b)
 
   a.sort == b.sort 
 end 
+
+def is_similar(a,b) 
+
+  sum, s1, s2 = 0, 1, 1 
+
+  for i in (0..a.length - 1) 
+    if (a[i] != b[i]) 
+      sum += 1 
+    end 
+    s1 *= a[i] # 
+    s2 *= b[i] 
+  end 
+
+  return sum < 2 && s1 == s2
+
+end 
