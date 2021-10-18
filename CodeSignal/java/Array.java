@@ -1,5 +1,8 @@
 package java;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Array {  
   /* 
   # https://app.codesignal.com/arcade/intro/level-4/xvkRbxYkdHdHNCKjg 
@@ -7,11 +10,6 @@ public class Array {
   You are given an array of integers. On each move you are allowed to increase 
   exactly one of its element by one. Find the minimal number of moves required 
   to obtain a strictly increasing sequence from the input.
-  
-  Example
-  
-  For inputArray = [1, 1, 1], the output should be
-  arrayChange(inputArray) = 3. 
   
   [1, 2 (+1), 3 (+2) ] 1+2 == 3
  */
@@ -63,4 +61,27 @@ Given two arrays a and b, check whether they are similar.
     }
     return max;
   }
+
+  /* 
+  Given an array of strings, return another array containing all of its longest strings
+  */
+
+  String [] allLongestString(String[] a) { 
+    List <String> longest = new ArrayList<String>(); 
+    int max = 0; 
+
+    for (int i = 0; i < a.length; i++) { 
+      if (a[i].length() > max)
+        max = a[i].length();
+    }
+
+    for (int i = 0 ; i<a.length ; i++) { 
+      if (a[i].length() == max) 
+        longest.add(a[i]);
+    }
+
+    String [] reulst = longest.toArray(new String[longest.size()]);
+
+    return reulst;
+  } 
 }
