@@ -49,4 +49,18 @@ Given two arrays a and b, check whether they are similar.
 
     return sum <= 2  && s1 == s2; 
   }
+
+  // https://app.codesignal.com/arcade/intro/level-2/xzKiBHjhoinnpdh6m  
+  /* Given an array of integers, find the pair of adjacent elements that
+  has the largest product and return that product. */
+  int adjacentElementsProduct(int[] inputArray) {
+    int max = -10^1000; 
+    
+    for (int i = 1; i < inputArray.length; i++) { 
+        int product = (inputArray[i-1] * inputArray[i]);
+        System.out.print(product);
+        max = Math.max(max, product);
+    }
+    return max;
+  }
 }

@@ -62,6 +62,8 @@ def are_similar(a, b)
   a.sort == b.sort 
 end 
 
+# TWO 
+
 def is_similar(a,b) 
 
   sum, s1, s2 = 0, 1, 1 
@@ -70,7 +72,7 @@ def is_similar(a,b)
     if (a[i] != b[i]) 
       sum += 1 
     end 
-    s1 *= a[i] # 
+    s1 *= a[i] # product of all element in the array
     s2 *= b[i] 
   end 
 
