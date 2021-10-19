@@ -140,7 +140,16 @@ Given two arrays a and b, check whether they are similar.
     return sums;
   }
 
-  
+  int[] alternatingSums2(int[] a) { 
+    int[] sum = new int[2]; 
+
+    for(int i = 0; i < a.length; i++) {  
+      // Frequency array
+      sum[i%2] += a[i];
+    }
+    return sum;
+  } 
+
 
 
   
