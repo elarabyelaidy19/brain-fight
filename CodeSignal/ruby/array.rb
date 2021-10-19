@@ -126,3 +126,61 @@ def all_longest_strings(arr)
 
   longest 
 end 
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG
+
+def almostIncreasingSequence(sequence) 
+  counter = 0
+  biggest_value = -10 ** 5 
+  second_biggest_value = biggest_value
+  
+  sequence.each do |seq|
+    if seq > biggest_value 
+      second_biggest_value = biggest_value 
+      biggest_value = seq 
+  
+    elsif seq > second_biggest_value 
+      biggest_value = seq
+      counter += 1
+  
+    else
+      counter += 1
+  
+    end
+  end
+  counter <= 1 ? true : false
+  
+end 
+
+
+#  another sol 
+
+def almostIncreasingSequence(sequence) 
+  return false if sequence.each_cons(2).count { |a, b| a >= b } > 1 
+  return false if sequence.each_cons(3).count { |a, b, c| (a >= b && a >= c) || (a >= b && b >= c) || (a >= c && b >= c) } > 1 
+  return true 
+end  
+
+#####################################################################
+#####################################################################
+
+=begin
+Given a string, your task is to replace each of its characters by the next one in the English alphabet; i.e. replace a with b, replace b with c, etc (z would be replaced by a).
+Example
+For inputString = "crazy", the output should be alphabeticShift(inputString) = "dsbaz".
+=end
+
+def alphabeticShift(inputString)
+  alpha = ("a".."z").to_a
+  new_str = "" 
+  
+  inputString.each_char do |c| 
+      new_str << "a" if c == "z"  
+      new_str << alpha[alpha.index(c) +1] if alpha[alpha.index(c)] == c && c != "z"
+  end  
+  new_str
+end
