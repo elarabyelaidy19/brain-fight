@@ -160,7 +160,32 @@ Given two arrays a and b, check whether they are similar.
         inputArray[i] = substitutionElem;
     }
     return inputArray;
+  } 
+
+  /*  https://app.codesignal.com/arcade/intro/level-5/XC9Q2DhRRKQrfLhb5
+  You are given an array of integers representing coordinates of obstacles situated on a straight line.
+
+  Assume that you are jumping from the point with coordinate 0 to the right. 
+  You are allowed only to make jumps of the same length represented by some integer.
+
+  Find the minimal length of the jump enough to avoid all the obstacles.  
+  */
+  int avoidObstacles(int[] inputArray) {
+    int jump = 1;
+    
+    for (int i = 0; i < inputArray.length;) {
+      
+      // Obstacales can not divided by jump
+      if (inputArray[i] % jump == 0) {
+        i = 0;
+        jump += 1;
+      } else {
+        i += 1;
+      }
+    }
+    return jump;
   }
+
 
   
 }
