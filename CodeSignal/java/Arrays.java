@@ -124,6 +124,24 @@ Given two arrays a and b, check whether they are similar.
 
   } 
 
+  int[] alternatingSums(int[] a) {
+    //https://app.codesignal.com/arcade/intro/level-4/cC5QuL9fqvZjXJsW9
+    // int team1 = 0;
+    // int team2 = 0;
+    // List <Integer> sums = new ArrayList<Integer>();
+    int[] sums = { 0, 0 };
+    for (int i = 0; i < a.length; i++) {
+      if (i % 2 == 0) {
+        sums[0] += a[i];
+      } else {
+        sums[1] += a[i];
+      }
+    }
+    return sums;
+  }
+
+  
+
 
   
 }
