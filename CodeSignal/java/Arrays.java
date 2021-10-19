@@ -3,7 +3,7 @@ package java;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Array {  
+public class Arrays {  
   /* 
   # https://app.codesignal.com/arcade/intro/level-4/xvkRbxYkdHdHNCKjg 
   =begin 
@@ -84,4 +84,62 @@ Given two arrays a and b, check whether they are similar.
 
     return reulst;
   } 
+/* 
+  https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG 
+  Given a sequence of integers as an array, determine whether it is possible 
+  to obtain a strictly increasing sequence by removing no more than one element from the array. */
+  boolean almostIncreasingSequence(int[] sequence) {
+    int max = -10 ^ 100;
+    int secondMax = -10 ^ 100;
+    int count = 0;
+    for (int i = 0; i < sequence.length; i++) {
+      if (sequence[i] > max) {
+        secondMax = max;
+        max = sequence[i];
+      } else if (sequence[i] > secondMax) {
+        max = sequence[i];
+        count += 1;
+      } else {
+        count += 1;
+      }
+    }
+    return count <= 1;
+
+  } 
+
+  boolean almostIncreasingSequence2(int[] sequence) {
+    int count = 0;
+    for (int i = 0; i < sequence.length; i++) {
+        if(sequence[i] - sequence[i+1] >= 0) 
+          count += 1;
+
+          if ((i-1 >= 0 && i+2 <= sequence.length - 1) 
+              && (sequence[i-1] - sequence[i+1] >= 0) 
+              && (sequence[i] - sequence[i+2] >= 0)) { 
+          
+                return false; 
+          }
+        }
+    return count <= 1;
+
+  } 
+
+  boolean almostIncreasingSequence3(int[] sequence) {
+    int count = 0;
+    for (int i = 0; i < sequence.length; i++) {
+      if (sequence[i] - sequence[i + 1] >= 0)
+        count += 1;
+
+      if ((i - 1 >= 0 && i + 2 <= sequence.length - 1) && (sequence[i - 1] - sequence[i + 1] >= 0)
+          && (sequence[i] - sequence[i + 2] >= 0)) {
+
+        return false;
+      }
+    }
+    return count <= 1;
+
+  }
+
+
+  
 }
