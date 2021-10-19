@@ -7,6 +7,7 @@ public class Strings {
     i.e. replace a with b, replace b with c, etc (z would be replaced by a). */
 
     String alphabeticShift(String inputString) {
+        // Convert string to array of characters
         char[] chars = inputString.toCharArray();
 
         for (int i = 0; i < chars.length; i++) {
@@ -15,8 +16,11 @@ public class Strings {
             } else {
                 chars[i]++;
             }
-        }
+        } 
+        //  Casting new
         return new String(chars);
-    }
+    } 
+
+
 
 }
