@@ -15,18 +15,19 @@ public class Maths {
 
     // https:// app.codesignal.com/arcade/intro/level-7/8PxjMSncp9ApA4DAb
     int depositProfit(double deposit, double rate, double threshold) {
-        // int increaing = deposit + (deposite*(rate/ 100));
+        // int increaing = deposit + (deposite*(rate/ 100)); 
+
         // convert int to double or casting 
         int year = 0;
         double rateInc = rate / 100;
         while (deposit < threshold) {
-            deposit += (deposit * rateInc);
+            deposit += (deposit * rateInc); // deposite *= (1 + rate)
             year += 1;
         }
 
         return year;
     }
-    
+
     int depositProfit2(int deposit, int rate, int threshold) {
         return (int) Math.ceil(Math.log((double) threshold / deposit) / Math.log(1 + (rate / 100.0)));
     }
