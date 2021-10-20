@@ -102,7 +102,42 @@ public class SLinkedlist {
 
     public void deleteHead() { 
         deleteNth(0);
+    } 
+
+    public void checkBound(int low, int hight, int position) { 
+        if (position < low || position > hight) { 
+            throw new IndexOutOfBoundsException(position + "");
+        }
     }
+
+    public void clear() { 
+        Node cur = head; 
+
+        while(cur != null) { 
+            Node prev = cur; 
+            cur = cur.next; 
+            prev = null;
+        }
+        head = null; 
+        size = 0;
+    }
+
+    public boolean isEmpty() { 
+        return size == 0;
+    }
+
+    public int size() { 
+        return size;
+    }
+
+    public Node getHead() { 
+        return head;
+    }
+
+    
+
+
+
 
 
 
