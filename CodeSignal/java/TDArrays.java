@@ -1,7 +1,7 @@
 package java;
 public class TDArrays {
-
-    // BOX BLUR
+    // https://app.codesignal.com/arcade/intro/level-5/5xPitc3yT3dqS7XkP
+    // BOX BLUR 
     int[][] boxBlur(int[][] image) {
         int[][] result = new int[image.length - 2][image[1].length - 2];
         for (int i = 0; i < image.length - 2; i++) {
@@ -13,6 +13,7 @@ public class TDArrays {
         return result;
     }
 
+    // TOW
     int[][] boxBlur2(int[][] image) { 
         int[][] result = new int[image.length-2][image[0].length-2]; 
 
@@ -34,4 +35,15 @@ public class TDArrays {
         }
         return sum/9;
     }
+
+    // https://app.codesignal.com/arcade/intro/level-6/t97bpjfrMDZH8GJhi
+
+    /* Given two cells on the standard chess board, determine whether they have the same color or not. */
+    boolean chessBoardCellColor(String cell1, String cell2) {
+        // CHESS BLACK OR WHITE 
+        // CELL(0)+CELL(1) == EVEN BLACK 
+        // CELL(0)+CELL(1) == ODD   WHITE
+    return (cell1.charAt(0) + cell1.charAt(1)) % 2 == (cell2.charAt(0) + cell2.charAt(1)) % 2;
+    }
+
 }
