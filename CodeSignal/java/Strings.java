@@ -19,7 +19,31 @@ public class Strings {
         } 
         //  Casting new
         return new String(chars);
-    } 
+    }
+/* 
+    https://app.codesignal.com/arcade/intro/level-3/JKKuHJknZNj4YGL32
+    Given two strings, find the number of common characters between them. */
+    int commonCharacterCount(String s1, String s2) {
+        int count = 0;
+        int[] a = new int[26];
+        int[] b = new int[26];
+
+        for (int i = 0; i < s1.length(); i++) {
+            // Freq Array
+            a[s1.charAt(i) - 'a']++;
+        }
+        for (int j = 0; j < s2.length(); j++) {
+            // Freq array
+            b[s2.charAt(j) - 'a']++;
+        }
+
+        for (int k = 0; k < 26; k++) {
+            count += Math.min(a[k], b[k]);
+        }
+
+        return count;
+
+    }
 
 
 
