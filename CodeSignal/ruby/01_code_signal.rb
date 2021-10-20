@@ -4,68 +4,6 @@
 #####################################################################
 #####################################################################
 
-# https://app.codesignal.com/arcade/intro/level-3/JKKuHJknZNj4YGL32 
-
-def common_char_count(s1, s2) 
-  count = 0 
-
-  s1.each_char do |c| 
-    cout += 1 if s2.include?(c) && s2[c] = "" 
-  end 
-
-  count 
-end 
-
-#####################################################################
-#####################################################################
-
-=begin 
-
-You have deposited a specific amount of money into your bank account. Each year your balance increases at the same growth rate. With the assumption that you don't make any additional deposits, find out how long it would take for your balance to pass a specific threshold.
-
-Example
-
-For deposit = 100, rate = 20, and threshold = 170, the output should be
-depositProfit(deposit, rate, threshold) = 3.
-
-Each year the amount of money in your account increases by 20%. So throughout the years, your balance would be:
-
-year 0: 100;
-year 1: 120;
-year 2: 144;
-year 3: 172.8.
-Thus, it will take 3 years for your balance to pass the threshold, so the answer is 3.
-=end 
-
-
-def depositProfit(deposit, rate, threshold)
-  years = 0 
-  rate = rate / 100.to_f 
-  
-  while threshold > deposit 
-      years += 1 
-      deposit += deposit * rate  # == deposite *= (1 + rate)
-  end 
-  years
-end 
-
-
-# formula  
-# deposit + (deposite * rate)^y = balance after y Year 
-
-def  
-  
-def depositProfit(deposit, rate, threshold)
-  num = Math.log(threshold.to_f / deposit) 
-  dem = Math.log(1 + (rate / 100.to_f)) 
-
-  return (num / dem).ceil
-end 
-
-
-#####################################################################
-#####################################################################
-
 # https://app.codesignal.com/arcade/intro/level-6/6cmcmszJQr6GQzRwW 
 
 def evenDigitsOnly(n)
