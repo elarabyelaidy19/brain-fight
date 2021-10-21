@@ -1,4 +1,8 @@
 package java.Lists;
+
+import java.lang.annotation.Retention;
+import java.util.StringJoiner;
+
 public class SLinkedlist { 
     
     /* This class is the nodes of the SinglyLinked List. They consist of a value and a pointer to the
@@ -52,6 +56,7 @@ public class SLinkedlist {
     }
 
     public void insertNth(int data, int position) { 
+        checkBound(0, size-1, position);
         // new Object of Type node 
         Node newNode = new Node(data); 
         Node cur = head; 
@@ -76,7 +81,7 @@ public class SLinkedlist {
     }
 
     public void deleteNth(int position) { 
-        
+        checkBound(0, size-1, position);
         if(position == 0) { 
             Node destroy = head; 
             head = head.next; 
@@ -134,20 +139,48 @@ public class SLinkedlist {
         return head;
     }
 
-    
+    public int count() { 
+        int count = 0; 
+        Node cur = head; 
 
+        while(cur != null) { 
+            cur = cur.next; 
+            count++;
+        }
+        return count;
+    }
 
+    public boolean search(int key) { 
+        Node cur = head; 
 
+        while(cur != null) { 
+            if(cur.value == key) { 
+                return true;
+            }
+            cur = cur.next;
+        } 
+        return false;
+    }
 
+    // return element at special index
+    public int getNth(int index) { 
+        checkBound(0, size-1, index);
+        Node cur = head; 
+        for(int i = 0; i<index; i++){  
+            cur = cur.next;
+        }
+        return cur.value;
+    }
 
+    public String toString() { 
+        StringJoiner joiner = new StringJoiner("->"); 
+        Node cur = head; 
 
-
-    
-    
-
-
-    public static void main(String[] args) {
-        
+        while(cur != null) { 
+            joiner.add(cur.value + "");
+            cur = cur.next;
+        }
+        return joiner.toString();
     }
 
 }
