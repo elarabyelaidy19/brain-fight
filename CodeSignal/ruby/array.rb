@@ -230,3 +230,32 @@ def avoid_obstacles(array)
   end 
   jump
 end 
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-2/bq2XnSr5kbHqpHGJC 
+
+def makeArrayConsecutive2(statues)
+  length = statues.length - 1 
+  smallest = statues.min 
+  biggest = statues.max 
+  
+  actualLength = (biggest - smallest) 
+  
+  if actualLength == length 
+      return 0 
+  else 
+      actualLength - length 
+  end  
+  
+end 
+
+# Two 
+
+def makeArrayConsecutive2(s) 
+  arr = s.sort 
+  range = arr[arr.length-1] - arr[0] 
+  return range - s.length+1 
+end 
+

@@ -186,6 +186,15 @@ Given two arrays a and b, check whether they are similar.
     return jump;
   }
 
+  /* 
+  https:// app.codesignal.com/arcade/intro/level-2/bq2XnSr5kbHqpHGJC 
+  Help him figure out the minimum number of additional statues needed. 
+   */ 
 
-  
+  int makeArrayConsecutive2(int[] statues) { 
+    Arrays.sort(statues); 
+                        // INDEX of last ele
+    int range = (statues[statues.length-1] - statues[0]); 
+    return range - statues.length+1;
+  }
 }
