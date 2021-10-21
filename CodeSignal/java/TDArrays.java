@@ -46,4 +46,27 @@ public class TDArrays {
     return (cell1.charAt(0) + cell1.charAt(1)) % 2 == (cell2.charAt(0) + cell2.charAt(1)) % 2;
     }
 
+    // https://app.codesignal.com/arcade/intro/level-2/xskq4ZxLyqQMCLshr 
+    // return the total sum of all rooms that are suitable for the CodeBots (ie: add
+    // up all the values that don't appear below a 0).
+    int matrixElementsSum(int[][] matrix) {
+        int sum = 0; 
+        // return sum of col down 
+        // move cols down 
+        for(int c=0; c<matrix[0].length; c++) { 
+            for(int r = 0; r<matrix.length; r++) { 
+                            //  Current of the matrix original
+                int current = matrix[r][c];
+                if (current == 0) {
+                    break;
+                }
+                sum += current;   
+            }
+        }
+    
+    
+        return sum;
+    }
+
+
 }
