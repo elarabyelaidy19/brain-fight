@@ -196,5 +196,8 @@ Given two arrays a and b, check whether they are similar.
                         // INDEX of last ele
     int range = (statues[statues.length-1] - statues[0]); 
     return range - statues.length+1;
-  }
+  } 
+
+
+  
 }

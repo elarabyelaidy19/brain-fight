@@ -52,7 +52,7 @@ public class TDArrays {
     int matrixElementsSum(int[][] matrix) {
         int sum = 0; 
         // return sum of col down 
-        // move cols down 
+        // move cols down  COL FIRST
         for(int c=0; c<matrix[0].length; c++) { 
             for(int r = 0; r<matrix.length; r++) { 
                             //  Current of the matrix original
