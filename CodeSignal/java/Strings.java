@@ -46,6 +46,7 @@ public class Strings {
     }
 /* 
     https://app.codesignal.com/arcade/intro/level-5/veW5xJednTy4qcjso 
+    
     Given a string, find out if it satisfies the IPv4 address naming rules. */
     
     boolean isIPv4Address(String inputString) {
@@ -61,6 +62,7 @@ public class Strings {
             if (!s.matches("[0-9]{1,3}")) {
                 return false;
             }
+            // parse numbers in String 
             int number = Integer.parseInt(s);
             if ((number < 0 || number > 255)) {
                 return false;
