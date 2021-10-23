@@ -197,6 +197,20 @@ Given two arrays a and b, check whether they are similar.
     int range = (statues[statues.length-1] - statues[0]); 
     return range - statues.length+1;
   } 
+  // https://app.codesignal.com/arcade/intro/level-5/EEJxjQ7oo7C5wAGjE
+  // Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+  int arrayMaximalAdjacentDifference(int[] inputArray) {
+    int max = 0; 
+    
+    for(int i = 0; i<inputArray.length-1; i++) { 
+        int diff = Math.abs(inputArray[i]-inputArray[i+1]); 
+        max = Math.max(max, diff); 
+    }
+    return max;
+  } 
+  
+  
+
 
 
   
