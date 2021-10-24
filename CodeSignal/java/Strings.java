@@ -111,4 +111,19 @@ public class Strings {
     }
 
 
+   /* https://app.codesignal.com/arcade/intro/level-3/9DgaPsE2a7M6M2Hu6 
+    
+    Write a function that reverses characters in (possibly nested) parentheses in the input string.
+    Input strings will always be well-formed with matching ()s.  */
+    String reverseInParentheses(String inputString) {
+        int start = inputString.lastIndexOf("(");
+        int end = inputString.indexOf(")", start);
+        if (start == -1 || end == -1 || start > end)
+            return inputString;
+        return reverseInParentheses(inputString.substring(0, start)
+                + new StringBuilder(inputString.substring(start + 1, end)).reverse().toString()
+                + inputString.substring(end + 1));
+    }
+
+
 }
