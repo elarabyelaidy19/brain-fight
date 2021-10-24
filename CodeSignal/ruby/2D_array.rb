@@ -82,3 +82,29 @@ def matrixElementsSum(matrix)
   end
   result
 end
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-5/ZMR5n7vJbexnLrgaM 
+
+def minesweeper(matrix)
+    result = Array.new(matrix.length) { Array.new(matrix[0].length, 0) } 
+
+    matrix.each_with_index do |row, r| 
+        row.each_with_index do |col, c|  
+        
+            if col  
+                (r-1..r+1).each do |r1| 
+                    next if r1 < 0 || r1 > matrix.length - 1
+                    (c-1..c+1).each do |c1| 
+                        next if c1 < 0 || c1 > matrix[0].length - 1 
+                        result[r1][c1] += 1 if !(r1 == r && c == c1)
+                    end 
+                end 
+            end 
+        end 
+    end 
+    return result 
+end

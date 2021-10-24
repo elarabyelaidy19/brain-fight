@@ -66,6 +66,46 @@ public class TDArrays {
     
     
         return sum;
+    } 
+    /* 
+    https://app.codesignal.com/arcade/intro/level-5/ZMR5n7vJbexnLrgaM 
+    In the popular Minesweeper game you have a board with some mines and those cells that don't contain a 
+    mine have a number in it that indicates the total number of mines in the neighboring cells. */
+    int[][] minesweeper(boolean[][] matrix) {
+        int[][] arr = new int[matrix.length][matrix[0].length];
+
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                int counter = 0;
+                // top
+                if (r > 0 && matrix[r - 1][c])
+                    counter++;
+                // bottom
+                if (r + 1 < matrix.length && matrix[r + 1][c])
+                    counter++;
+                // left
+                if (c > 0 && matrix[r][c - 1])
+                    counter++;
+                // right
+                if (c + 1 < matrix[0].length && matrix[r][c + 1])
+                    counter++;
+                // top left
+                if (r > 0 && c > 0 && matrix[r - 1][c - 1])
+                    counter++;
+                // top right
+                if (r > 0 && c + 1 < matrix[0].length && matrix[r - 1][c + 1])
+                    counter++;
+                // bottom left
+                if (r + 1 < matrix.length && c > 0 && matrix[r + 1][c - 1])
+                    counter++;
+                // bottom right
+                if (r + 1 < matrix.length && c + 1 < matrix[0].length && matrix[r + 1][c + 1])
+                    counter++;
+
+                arr[r][c] = counter;
+            }
+        }
+        return arr;
     }
 
 
