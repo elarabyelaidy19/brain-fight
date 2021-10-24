@@ -60,3 +60,24 @@ def isIPv4Address(string)
   string.split('.').each { |x| return false if x.to_i.to_s != x || x.to_i > 255 } 
   true 
 end 
+
+
+#####################################################################
+#####################################################################
+
+# https://app.codesignal.com/arcade/intro/level-4/Xfeo7r9SBSpo3Wico 
+require 'set' 
+def plindrome_rearranging(string) 
+  set = Set.new 
+
+  string.each_char do |ch| 
+    
+    if set.include?(c) 
+      set.delete(c) 
+    else  
+      set.add(c) 
+    end 
+  end 
+
+  set.length <= 1 ? true : false 
+end 

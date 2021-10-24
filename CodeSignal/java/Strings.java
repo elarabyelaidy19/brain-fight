@@ -1,5 +1,10 @@
 package java;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.swing.plaf.TreeUI;
+
 public class Strings {
   
     /*https://app.codesignal.com/arcade/intro/level-6/PWLT8GBrv9xXy4Dui 
@@ -71,7 +76,40 @@ public class Strings {
 
         return true;
     }
+    /* 
+    https:// app.codesignal.com/arcade/intro/level-4/Xfeo7r9SBSpo3Wico 
 
+    Given a string, find out if its characters can be rearranged to form a palindrome. */ 
+
+    // Using Freq Array
+    boolean palindromeRearranging(String inputString) {
+        int[] freqArr = new int[26];
+
+        for (int i = 0; i < inputString.length(); i++) {
+            freqArr[inputString.charAt(i) - 'a']++;
+        }
+
+        int count = 0;
+        for (int i = 0; i < freqArr.length; i++) {
+            if (freqArr[i] % 2 != 0)
+                count++;
+        }
+        return count <= 1;
+    }
+
+    // Using Set 
+    boolean palindromeRearranging2(String s) { 
+        Set <Character> chars = new HashSet<Character>(); 
+
+        for(int i = 0; i<s.length(); i++) { 
+            if(chars.contains(s.charAt(i))) 
+                chars.remove(s.charAt(i)); 
+            else 
+                chars.add(s.charAt(i)); 
+        }
+
+        return chars.size() <= 1 ? true : false; 
+    }
 
 
 }
