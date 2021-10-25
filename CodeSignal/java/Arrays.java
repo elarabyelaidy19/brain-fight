@@ -62,9 +62,10 @@ Given two arrays a and b, check whether they are similar.
     return max;
   }
 
-  /* 
-  Given an array of strings, return another array containing all of its longest strings
-  */
+  /*
+   * https://app.codesignal.com/arcade/intro/level-3/fzsCQGYbxaEcTr2bL 
+   *  Given an array of strings, return another array containing all of its longest strings
+   */
 
   String [] allLongestString(String[] a) { 
     List <String> longest = new ArrayList<String>(); 
@@ -214,7 +215,7 @@ Given two arrays a and b, check whether they are similar.
   Some people are standing in a row in a park. There are trees between them which cannot be moved. 
   Your task is to rearrange the people by their heights in a 
   non-descending order without moving the trees. People can be very tall! */ 
-  
+
   int[] sortByHeight(int[] a) {
     int temp;
 

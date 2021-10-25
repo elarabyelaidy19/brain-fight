@@ -76,7 +76,7 @@ def is_similar(a,b)
     s2 *= b[i] 
   end 
 
-  return sum < 2 && s1 == s2
+  return sum <= 2 && s1 == s2
 
 end 
 
@@ -301,9 +301,8 @@ a non-descending order without moving the trees. People can be very tall!
 def sort_by_height(arr) 
   len = arr.lenght - 1 
   for i in (0..len) 
-    if arr[i] > -1 
       for j in (0..len) 
-        if (arr[j] > -1 && arr[j] > arr[i]) 
+        if (arr[j] > -1 && arr[i] > - 1 && arr[j] > arr[i]) 
           arr[j], arr[i] = arr[i], arr[j] 
         end 
       end 
