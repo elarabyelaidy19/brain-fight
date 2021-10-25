@@ -31,5 +31,13 @@ public class Maths {
     int depositProfit2(int deposit, int rate, int threshold) {
         return (int) Math.ceil(Math.log((double) threshold / deposit) / Math.log(1 + (rate / 100.0)));
     }
+    
+    /* 
+    https:// app.codesignal.com/arcade/intro/level-2/yuGuHvcCaFCKk56rJ
+    Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n. */
+    int shapeArea(int n) {
+    return n*n + (n-1)*(n-1);
+    }
+
 
 }
