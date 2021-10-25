@@ -208,6 +208,28 @@ Given two arrays a and b, check whether they are similar.
     }
     return max;
   } 
+  /* 
+  https://app.codesignal.com/arcade/intro/level-3/D6qmdBL2NYz49XHwM 
+
+  Some people are standing in a row in a park. There are trees between them which cannot be moved. 
+  Your task is to rearrange the people by their heights in a 
+  non-descending order without moving the trees. People can be very tall! */ 
+  
+  int[] sortByHeight(int[] a) {
+    int temp;
+
+    for (int i = 0; i < a.length; i++) {
+      for (int j = 0; j < a.length; j++) {
+        if (a[j] > -1 && a[i] > -1 && a[j] > a[i]) {
+
+          temp = a[i];
+          a[i] = a[j];
+          a[j] = temp;
+        }
+      }
+    }
+    return a;
+  }
   
   
 

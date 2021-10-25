@@ -287,3 +287,28 @@ def arrayMaximalAdjacentDifference(array)
   end 
   max  
 end 
+
+
+
+#####################################################################
+#####################################################################
+=begin 
+# https://app.codesignal.com/arcade/intro/level-3/D6qmdBL2NYz49XHwM  
+Some people are standing in a row in a park. There are trees between them which cannot be moved. 
+Your task is to rearrange the people by their heights in 
+a non-descending order without moving the trees. People can be very tall! 
+=end
+def sort_by_height(arr) 
+  len = arr.lenght - 1 
+  for i in (0..len) 
+    if arr[i] > -1 
+      for j in (0..len) 
+        if (arr[j] > -1 && arr[j] > arr[i]) 
+          arr[j], arr[i] = arr[i], arr[j] 
+        end 
+      end 
+    end 
+  end 
+
+  arr 
+end 
