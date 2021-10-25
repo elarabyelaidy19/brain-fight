@@ -124,7 +124,13 @@ public class Strings {
         return reverseInParentheses(inputString.substring(0, start)
                 + new StringBuilder(inputString.substring(start + 1, end)).reverse().toString()
                 + inputString.substring(end + 1));
+    } 
+    
+    /* 
+    https://app.codesignal.com/arcade/intro/level-6/6Wv4WsrsMJ8Y2Fwno 
+    Correct variable names consist only of English letters, digits and underscores and they can't start with a digit. */
+    boolean variableName(String name) {
+        return name.matches("[a-zA-z_][a-zA-Z0-9_]*");
     }
-
 
 }

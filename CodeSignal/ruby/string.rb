@@ -117,3 +117,25 @@ def reverse_parenthes(str)
   reverse_parenthes(str)
 
 end 
+
+
+#####################################################################
+#####################################################################
+
+
+# Correct variable names consist only of English letters, digits and underscores and they can't start with a digit.
+
+def variable_name(name) 
+  return false if /\d/.match(name[0]) 
+
+  name.each_char do |c| 
+    return false unless /[a-zA-Z]/.match(c) || /\d/.match(c) || c == "_" 
+  end 
+  true 
+end 
+
+def variableName(name) 
+    # if regex return nil from pattern so it is not match this pattern 
+    # if nil == true so it does not match 
+   !(/^[a-zA-Z_][a-zA-Z0-9_]*$/ =~ name ).nil?
+end 

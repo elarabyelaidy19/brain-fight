@@ -311,3 +311,8 @@ def sort_by_height(arr)
 
   arr 
 end 
+
+def sort_by_height(arr) 
+  heights = arr.select { |a| a>0 }.sort! 
+  arr.map { |a| a == -1 ? heights.shift : -1 } 
+end  
