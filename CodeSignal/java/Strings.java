@@ -119,7 +119,8 @@ public class Strings {
         int start = inputString.lastIndexOf("(");
         int end = inputString.indexOf(")", start);
         if (start == -1 || end == -1 || start > end)
-            return inputString;
+            return inputString; 
+        
         return reverseInParentheses(inputString.substring(0, start)
                 + new StringBuilder(inputString.substring(start + 1, end)).reverse().toString()
                 + inputString.substring(end + 1));
