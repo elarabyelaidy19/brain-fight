@@ -1,8 +1,5 @@
 package java.Lists;
 
-import java.lang.annotation.Retention;
-import java.util.StringJoiner;
-
 public class SLinkedlist { 
     
     /* This class is the nodes of the SinglyLinked List. They consist of a value and a pointer to the
@@ -51,8 +48,22 @@ public class SLinkedlist {
     }
 
     // insert at tails
-    public void insert(int data) { 
-        insertNth(data, size);
+    
+    public void insertNodeAtTail(Node head, int data) {
+        Node newNode = new Node(data);
+        newNode.next = null;
+
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node tailNode = head;
+            while (tailNode.next != null) {
+                tailNode = tailNode.next;
+            }
+
+            tailNode.next = newNode;
+        }
+
     }
 
     public void insertNth(int data, int position) { 
@@ -170,6 +181,16 @@ public class SLinkedlist {
             cur = cur.next;
         }
         return cur.value;
+    } 
+
+    // print Elements of linked list
+    static void printLinkedList(Node head) {
+        Node current = head;
+
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
     }
 
     public String toString() { 
