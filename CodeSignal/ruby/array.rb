@@ -316,3 +316,48 @@ def sort_by_height(arr)
   heights = arr.select { |a| a>0 }.sort! 
   arr.map { |a| a == -1 ? heights.shift : -1 } 
 end  
+
+
+
+
+def absoluteValuesSumMinimization(a) 
+  min = 100**100 
+  idx = -1 
+
+  for i in (0..a.length - 1) 
+    max = 0 
+    for j in (0..a.length - 1) 
+      max += (a[j] - a[i]).abs 
+    end 
+
+    if min > max 
+      idx = a[i] 
+      min = max 
+    end 
+  end 
+  idx 
+end 
+
+# two 
+
+def absoluteValuesSumMinimization(a) 
+  min_diff = 100**100 
+  x = 0 
+    
+  for i in (0..a.length - 1) 
+       sum_diff =  a.map { |d| (d - a[i]).abs }.sum 
+       p sum_diff
+       if sum_diff < min_diff 
+           x = a[i]
+           min_diff = sum_diff 
+       end 
+   end 
+   x 
+end 
+
+
+# Three 
+
+def absoluteValuesSumMinimization(a) 
+  return a[(a.length - 1) / 2] 
+end 

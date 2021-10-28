@@ -233,7 +233,8 @@ Given two arrays a and b, check whether they are similar.
   }
   
   /* 
-  https:// app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN 
+  https://app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN 
+
   Given a rectangular matrix of characters, add a border of asterisks(*) to it.  
   */
   
