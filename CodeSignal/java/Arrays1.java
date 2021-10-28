@@ -2,8 +2,8 @@ package java;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class Arrays {  
+import java.util.Arrays;
+public class Arrays1 {  
   /* 
   # https://app.codesignal.com/arcade/intro/level-4/xvkRbxYkdHdHNCKjg 
   =begin 
@@ -232,8 +232,18 @@ Given two arrays a and b, check whether they are similar.
     return a;
   }
   
+  /* 
+  https:// app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN 
+  Given a rectangular matrix of characters, add a border of asterisks(*) to it.  
+  */
   
-
+  String[] addBorder(String[] picture) { 
+    String[] result = new String[picture.length + 2];  
+    char[] line = new char[picture[0].length() + 2]; 
+    Arrays.fill(line, '*'); 
+    
+    return result;
+  }
 
 
   
