@@ -277,6 +277,13 @@ Given two arrays a and b, check whether they are similar.
 
   int absoluteValuesSumMinimization2(int[] a) { 
     return a[(a.length-1) / 2];
-  }
+  } 
 
+
+  /* // https:// app.codesignal.com/arcade/intro/level-7/ZFnQkq9RmMiyE6qtq 
+  Given an array of equal-length strings, you'd like to know if it's possible  
+  to rearrange the order of the elements in such a way that each consecutive pair of 
+  strings differ by exactly one character. Return true if it's possible, and false if not.
+  */ 
+  
 }
