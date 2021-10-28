@@ -273,6 +273,10 @@ Given two arrays a and b, check whether they are similar.
       }
 
       return element;
+  } 
+
+  int absoluteValuesSumMinimization2(int[] a) { 
+    return a[(a.length-1) / 2];
   }
 
 }
