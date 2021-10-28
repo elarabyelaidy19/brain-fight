@@ -251,6 +251,28 @@ Given two arrays a and b, check whether they are similar.
     return result;
   }
 
+  /* 
+  https:// app.codesignal.com/arcade/intro/level-7/ZFnQkq9RmMiyE6qtq 
+  Given a sorted array of integers a, your task is to determine which 
+  element of a is closest to all other values of a.  
+  */ 
 
-  
+  int absoluteValuesSumMinimization(int[] a) {
+      int max = Integer.MAX_VALUE, sum, element = 0; 
+
+      for(int i = 0; i<a.length; i++) { 
+        sum = 0; 
+        for(int j = 0; j<a.length; j++){ 
+          sum += Math.abs(a[j]-a[i]);
+        } 
+        
+        if(max > sum) {
+          max = sum; 
+          element = a[i]; 
+        }
+      }
+
+      return element;
+  }
+
 }
