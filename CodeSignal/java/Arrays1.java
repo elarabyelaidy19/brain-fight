@@ -241,6 +241,11 @@ Given two arrays a and b, check whether they are similar.
     String[] result = new String[picture.length + 2];  
     char[] line = new char[picture[0].length() + 2]; 
     Arrays.fill(line, '*'); 
+    result[0] = new String(line); 
+    result[result.length - 1] = result[0]; 
+
+    for(int i = 1; i<= result.length - 2; i++) 
+      result[i] = '*' + picture[i-1] + '*'; 
     
     return result;
   }
