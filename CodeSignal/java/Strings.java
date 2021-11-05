@@ -133,4 +133,16 @@ public class Strings {
         return name.matches("[a-zA-z_][a-zA-Z0-9_]*");
     }
 
+    // https:// app.codesignal.com/arcade/intro/level-8/rRGGbTtwZe2mA8Wov 
+    // Find the leftmost digit that occurs in a given string.
+
+    char firstDigit(String s) {  
+        char[] chars = s.toCharArray(); 
+
+        for(char c : chars) { 
+            if(Character.isDigit(c)) 
+                return c;
+        }
+        return ' ';
+    }
 }

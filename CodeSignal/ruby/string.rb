@@ -196,3 +196,18 @@ def diffrence(s1, s2)
   end 
   count 
 end 
+
+#######################################################################
+#######################################################################
+
+=begin
+https://app.codesignal.com/arcade/intro/level-8/rRGGbTtwZe2mA8Wov
+Find the leftmost digit that occurs in a given string.
+=end
+
+def firstDigit(string) 
+  /[0-9]/.match(string) # 1
+  string.match(/\d/)  # 2 
+  string.scan(/\d/)[0]  # 3
+   /\d/.match(string)
+end
