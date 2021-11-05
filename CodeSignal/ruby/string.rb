@@ -211,3 +211,37 @@ def firstDigit(string)
   string.scan(/\d/)[0]  # 3
    /\d/.match(string)
 end
+
+
+#######################################################################
+#######################################################################
+
+=begin 
+https:// app.codesignal.com/arcade/intro/level-8/8N7p3MqzGQg5vFJfZ
+Given a string, find the number of different characters in it.
+=end 
+require 'set'
+def differentSymbolsNaive(s) 
+  set = Set.new 
+
+  s.each_char do |c| 
+    set.add(c) 
+  end 
+  set.lenght 
+end 
+
+# Second  
+
+def differentSymbolsNaive(s) 
+  chars = [] 
+  s.chars.map { |c| chars << c if chars.include?(c) == false } 
+  chars.length 
+end 
+
+# Third 
+
+def differentSymbolsNaive(s) 
+  s.chars.uniq.size 
+end 
+
+
