@@ -152,7 +152,7 @@ public class Strings {
     // Given a string, find the number of different characters in it.
     
     int differentSymbolsNaive(String s) {
-        List<Character> res = new ArrayList();
+        List<Character> res = new ArrayList<Character>();
         for (int i = 0; i < s.length(); i++) {
             if (!res.contains(s.charAt(i)))
                 res.add(s.charAt(i));
