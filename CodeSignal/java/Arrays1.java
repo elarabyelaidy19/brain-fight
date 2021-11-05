@@ -286,4 +286,20 @@ Given two arrays a and b, check whether they are similar.
   strings differ by exactly one character. Return true if it's possible, and false if not.
   */ 
   
+
+
+  // https:// app.codesignal.com/arcade/intro/level-8/3AgqcKrxbwFhd3Z3R  
+  // Given array of integers, remove each kth element from it.
+  int[] extractEachKth(int[] a, int k) {
+    int n = a.length; 
+    int[] res = new int[n-n/k]; 
+    int idx = 0;
+    for(int i = 0; i<n; i++) { 
+        if((i+1)%k != 0) 
+          res[idx++] = a[i];  
+    }
+    return res;
+
+  }
+
 }
