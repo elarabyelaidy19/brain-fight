@@ -1,6 +1,8 @@
 package java;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -145,4 +147,32 @@ public class Strings {
         }
         return ' ';
     }
+
+    // https:// app.codesignal.com/arcade/intro/level-8/8N7p3MqzGQg5vFJfZ
+    // Given a string, find the number of different characters in it.
+    
+    int differentSymbolsNaive(String s) {
+        List<Character> res = new ArrayList();
+        for (int i = 0; i < s.length(); i++) {
+            if (!res.contains(s.charAt(i)))
+                res.add(s.charAt(i));
+        }
+        return res.size();
+    }
+
+    int differentSymbolsNaive2(String s) { 
+        Set<Character> set = new HashSet<>();
+        char[] chars = s.toCharArray(); 
+
+        for(char c : chars) { 
+            set.add(c);
+        }
+        return set.size();
+    }
+
+    int differentSymbolsNaive3(String s) { 
+        return (int) s.chars().distinct().count();
+    }
+
+
 }
