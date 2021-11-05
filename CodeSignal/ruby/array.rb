@@ -361,3 +361,54 @@ end
 def absoluteValuesSumMinimization(a) 
   return a[(a.length - 1) / 2] 
 end 
+
+
+#######################################################################
+#######################################################################
+
+=begin 
+
+https://app.codesignal.com/arcade/intro/level-8/3AgqcKrxbwFhd3Z3R
+Given array of integers, remove each kth element from it.
+
+Remove every kth element from array [1,2,3,4,5,6,7,8,9,10] and k = 3 
+remove indices 3, 6, 9: [1,2,3,4,5,7,8,10]
+=end 
+
+
+# One 
+
+def extractEachKth(array, k) 
+  result = [] 
+  count = 0 
+
+  array.each do |x| 
+    count += 1 
+
+    if count != k 
+      result << x 
+    else 
+      count = 0 
+    end 
+  end 
+  result 
+end 
+
+
+# Two 
+
+def extractEachKth(array, k) 
+  array.select.with_index { |x, i| (i + 1) % k != 0 } 
+end 
+
+# Three 
+
+def extractEachKth(array, k)
+    arr = [] 
+    
+    array.each_with_index do |e, i| 
+        arr << e if (i+1) % k != 0        
+    end 
+    return arr 
+end
+
