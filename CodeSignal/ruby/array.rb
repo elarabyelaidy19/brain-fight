@@ -412,3 +412,40 @@ def extractEachKth(array, k)
     return arr 
 end
 
+
+#######################################################################
+#######################################################################
+=begin  
+https://app.codesignal.com/arcade/intro/level-8/Rqvw3daffNE7sT7d5
+Given array of integers, find the maximal possible sum of some of its k consecutive elements.
+=end 
+
+def arrayMaxConsecutiveSum(array, k)
+  sum = array[0...k].sum 
+  max = sum 
+  l = array.length
+  (k...l).each do |i| 
+    # drop k - i and sum i 
+    # 1, 2, 3, 4 ...... k 
+    # 2, 3, 4 ....... k , k + 1 
+    #.....  SLIDING WINDOW
+      sum = sum + array[i] - array[i-k] 
+      max = [sum, max].max  
+  end 
+  max      
+end
+
+
+def arrayMaxConsecutiveSum(a, k) 
+  s = [0] 
+  # [0]
+  l = a.size 
+
+  for i in 0...l 
+    s[i+1] = s[i] + a[i] 
+    # [0, 2, 5, 10, 11, 17] 
+  end 
+
+  (0..l-k).map { |i| s[i+k] - s[i] }.max 
+  # [5-0, 10-2, 11-5, 17-10] => [5, 8, 6, 7]  
+end 

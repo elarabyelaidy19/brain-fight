@@ -300,6 +300,24 @@ Given two arrays a and b, check whether they are similar.
     }
     return res;
 
+  } 
+
+  /* 
+  https://app.codesignal.com/arcade/intro/level-8/Rqvw3daffNE7sT7d5
+  Given array of integers, find the maximal possible sum of some of its k consecutive elements.  
+  */
+  int arrayMaxConsecutiveSum(int[] inputArray, int k) {
+    int sum = 0; 
+    for(int i = 0; i<k; i++) 
+        sum += inputArray[i]; 
+    
+    int max = sum; 
+    for(int i = k; i<inputArray.length; i++) {
+        sum = sum - inputArray[i-k] + inputArray[i]; 
+        max = Math.max(sum, max); 
+    }
+    return max;
   }
+
 
 }

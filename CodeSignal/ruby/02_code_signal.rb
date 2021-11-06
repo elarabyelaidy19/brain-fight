@@ -5,54 +5,6 @@
 
 #######################################################################
 #######################################################################
-=begin 
-Given array of integers, find the maximal possible sum of some of its k consecutive elements.
-
-Example
-
-For inputArray = [2, 3, 5, 1, 6] and k = 2, the output should be
-arrayMaxConsecutiveSum(inputArray, k) = 8.
-All possible sums of 2 consecutive elements are:
-
-2 + 3 = 5;
-3 + 5 = 8;
-5 + 1 = 6;
-1 + 6 = 7.
-Thus, the answer is 8.
-=end 
-
-def arrayMaxConsecutiveSum(array, k)
-  sum = array[0...k].sum 
-  max = sum 
-  l = array.length
-  (k...l).each do |i| 
-    # drop k - i and sum i 
-    # 1, 2, 3, 4 ...... k 
-    # 2, 3, 4 ....... k , k + 1 
-    #.....  SLIDING WINDOW
-      sum = sum - array[i - k] + array[i] 
-      max = [sum, max].max  
-  end 
-  max      
-end
-
-
-def arrayMaxConsecutiveSum(a, k) 
-  s = [0] 
-  # [0]
-  l = a.size 
-
-  for i in 0...l 
-    s[i+1] = s[i] + a[i] 
-    # [0, 2, 5, 10, 11, 17] 
-  end 
-
-  (0..l-k).map { |i| s[i+k] - s[i] }.max 
-  # [5-0, 10-2, 11-5, 17-10] => [5, 8, 6, 7]  
-end 
-
-#######################################################################
-#######################################################################
 
 =begin 
 Caring for a plant can be hard work, but since you tend to it regularly, you have a plant that grows consistently. Each day, its height increases by a fixed amount represented by the integer upSpeed. But due to lack of sunlight, the plant decreases in height every night, by an amount represented by downSpeed.
