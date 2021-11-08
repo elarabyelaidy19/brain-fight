@@ -34,9 +34,27 @@ public class Maths {
     
     /* 
     https:// app.codesignal.com/arcade/intro/level-2/yuGuHvcCaFCKk56rJ
-    Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n. */
+    Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n. 
+    */
     int shapeArea(int n) {
     return n*n + (n-1)*(n-1);
+    } 
+
+    /* https:// app.codesignal.com/arcade/intro/level-9/xHvruDnQCx7mYom3T
+    Given an integer desiredHeight, your task is to find how many days it'll take for the plant to reach this height. 
+    */
+    int growingPlant(int upSpeed, int downSpeed, int desiredHeight) {
+        int days = 0;
+        int value = 0;
+
+        while (desiredHeight > value) {
+            value += upSpeed;
+            days += 1;
+            if (value >= desiredHeight)
+                return days;
+            value -= downSpeed;
+        }
+        return days;
     }
 
 
