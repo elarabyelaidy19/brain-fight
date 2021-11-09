@@ -175,4 +175,20 @@ public class Strings {
     }
 
 
+    // https://app.codesignal.com/arcade/intro/level-9/AACpNbZANCkhHWNs3 
+    // Given a string, output its longest prefix which contains only digits.
+    String longestDigitsPrefix(String inputString) {
+        String res = "";
+        for (int i = 0; i < inputString.length(); i++) {
+            if (Character.isDigit(inputString.charAt(i)))
+                res += inputString.charAt(i);
+            else
+                break;
+        }
+        return res;
+
+    } 
+
+    
+
 }

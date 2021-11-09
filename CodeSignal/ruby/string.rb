@@ -245,3 +245,48 @@ def differentSymbolsNaive(s)
 end 
 
 
+
+#######################################################################
+#######################################################################
+=begin 
+Given a string, output its longest prefix which contains only digits.
+
+Example
+
+For inputString = "123aa1", the output should be
+longestDigitsPrefix(inputString) = "123".
+=end 
+
+def longestDigitsPrefix(s) 
+  nums = "" 
+
+  s.each_char do |c| 
+    unless /\d/.match(c) 
+      break 
+    else
+      nums += c 
+    end 
+  end 
+  nums 
+end 
+
+## two 
+
+
+def longestDigitsPrefix(s) 
+  nums = ""
+   
+  for i in 0...s.length 
+      if is_digit(s[i]) 
+          nums += s[i] 
+      else  
+          break
+      end 
+  end 
+  nums
+end 
+
+def is_digit(c) 
+  code = c.ord 
+  48 <= code && code <= 57  ## numbers in ascii 
+end 
