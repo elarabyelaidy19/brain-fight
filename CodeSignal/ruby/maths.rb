@@ -199,3 +199,22 @@ def digitDegree(n)
   1 + digitDegree(num)
 end 
 
+
+
+
+
+# find the smallest factorial which is not less than n.
+def solution(n)
+  i = 1  
+  result = 1
+  while n > result 
+      result*= i+=1
+  end
+  result
+end
+
+
+
+
+
+
