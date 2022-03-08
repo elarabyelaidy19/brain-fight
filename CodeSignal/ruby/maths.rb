@@ -214,6 +214,21 @@ def solution(n)
 end
 
 
+#They have just learned how to add two integers, written one below another, column by column. 
+# But the child always forgets about the important part - carrying.
+
+def solution(param1, param2)
+  mul = 1
+  res = 0 
+  while(param1 + param2 > 0) 
+       mul *= 10 
+       res += (param1 + param2) % mul 
+       param1 -= param1 % mul 
+       param2 -= param2 % mul
+  end 
+  return res
+end
+
 
 
 
