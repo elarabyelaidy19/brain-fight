@@ -247,7 +247,38 @@ def solution(n)
         end  
     end         
     n % (10**count_zeros) != 0
-end 
+end  
+
+def roundness(n) 
+  while n != 0 
+    if n % 10 != 0 
+      return n.to_s.include?("0") ? true : false 
+    end 
+    n /= 10 
+  end   
+end  
+
+=begin 
+# apple boxes You have k apple boxes full of apples. Each square box of size m contains m × m apples. 
+You just noticed two interesting properties about the boxes:
+
+The smallest box is size 1, the next one is size 2,..., all the way up to size k.
+Boxes that have an odd size contain only yellow apples. Boxes that have an even size contain only red apples.
+Your task is to calculate the difference between the number of red apples and the number of yellow apples. 
+=end
+def solution(k)
+   result = 0 
+   (1..k).each do |i| 
+        if (i%2 == 0) 
+            result += i*i 
+        else 
+            result -= i*i 
+        end 
+    end  
+    result 
+end
+
+
 
 
 
