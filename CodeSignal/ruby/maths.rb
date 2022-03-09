@@ -228,6 +228,28 @@ def solution(param1, param2)
   end 
   return res
 end
+=begin 
+# Define an integer's roundness as the number of trailing zeroes in it.
+
+Given an integer n, check if it's possible to increase n's roundness by swapping some pair of its digits.
+
+For n = 902200100, the output should be
+solution(n) = true.   
+solution(n) = false
+=end
+
+def solution(n)
+    num = n.to_s  
+    count_zeros = 0 
+    0.upto(num.length - 1) do |i| 
+        if num[i] == "0" 
+            count_zeros += 1 
+        end  
+    end         
+    n % (10**count_zeros) != 0
+end 
+
+
 
 
 
