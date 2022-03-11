@@ -298,11 +298,63 @@ def solution(n)
         n = (n/10) + ((n % 10 < 5) ? 0 : 1) 
     end 
     dot * n
+end 
+# another 
+def solution(value)
+  value.digits.size.times.inject(value){|a,n| a = a.round(-n)}
+end
+
+=begin 
+
+When a candle finishes burning it leaves a leftover. 
+makeNew leftovers can be combined to make a new candle, which, when burning down, will in turn leave another leftover.
+
+
+=end 
+
+
+def candleBurning(candles , make_new)
+  result = 0 # 5 + 2 + 1 + 1 = 9
+  leftover = 0  # 1 
+  while(candles > 0)  
+    result += candles 
+    leftover += candles  
+    candles = leftover / make_new  # 2 1 1 0
+    leftover = leftover % make_new  # 1 1 0 0
+  end 
+  result
+end 
+
+# Second solution
+def solution(candlesNumber, makeNew)
+   candlesNumber + (candlesNumber - 1) / (makeNew - 1)
 end
 
 
+=begin 
+Imagine a white rectangular grid of n rows and m columns divided into two parts by a diagonal 
+line running from the upper left to the lower right corner. Now let's paint the grid in two colors according to the following rules:
+
+A cell is painted black if it has at least one point in common with the diagonal;
+Otherwise, a cell is painted white.
+Count the number of cells painted black.
+
+Example
+
+For n = 3 and m = 4, the output should be
+solution(n, m) = 6.
+
+There are 6 cells that have at least one common point with the diagonal and therefore are painted black.
+=end 
 
 
+def count_black_cell(n, m)
+    n + m + m.gcd(n) - 2
+end 
 
-
-
+def gcd(a,b) 
+  while b != 0 
+    a, b = b, a % b 
+  end 
+  a 
+end 
