@@ -43,6 +43,32 @@ public class Arrays {
     }
 
 
+    // delete part of an array 
+    int[] solution(int[] inputArray, int l, int r) {
+        int[] res = new int[inputArray.length - (r-l) - 1]; 
+        int j = 0; 
+        for(int i = 0; i < inputArray.length; i++) { 
+            if(i < l || r < i) {
+                res[j] = inputArray[i]; 
+                j++;
+            }
+        } 
+        return res;
+        
+        
+    }
+
+    int[] remove(int[] a, int l, int r) { 
+        int[] res = new int[a.length - (r-l) - 1]; 
+        System.arraycopy(a, 0, res, 0, l); 
+        System.arraycopy(a, r+1, res, l, a.length - r - 1); 
+        return res;
+    }
+
+
+
+
+
 
 
 }
