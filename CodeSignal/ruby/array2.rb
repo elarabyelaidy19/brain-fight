@@ -11,7 +11,7 @@ def solution2(arr)
     if(l > 0) 
         arr[0] = arr[0] ^ arr[-1] ^ (arr[-1] = arr[0]) 
     end 
-    arr
+    return arr
 end 
 
 
