@@ -357,4 +357,6 @@ def gcd(a,b)
     a, b = b, a % b 
   end 
   a 
-end 
+end  
+
+
