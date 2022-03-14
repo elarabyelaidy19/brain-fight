@@ -68,6 +68,30 @@ public class Arrays {
 
 
 
+    // somoothe array array that first element is the same as the last element and the middle if odd, and 
+    // equal the sum of the middle element if even. 
+    boolean solution(int[] arr) {
+        int middle = arr.length % 2 == 0 ? arr[arr.length / 2] + arr[(arr.length / 2) - 1] : arr[arr.length / 2]; 
+        return middle == arr[0] && middle == arr[arr.length - 1];   
+    }
+
+
+
+    // replace middle element with the sum of the middle two elements if even  
+
+    int[] replaceMiddle(int[] arr) { 
+        if(arr.length % 2 == 1) 
+            return arr; 
+        
+        int[] res = new int[arr.length - 1]; 
+        for(int i = 0; i < arr.length/2; i++) { 
+            res[i] += arr[i];  
+            res[res.length - 1 - i] += arr[arr.length - 1 - i];   
+        }
+        return res;
+    }
+
+
 
 
 

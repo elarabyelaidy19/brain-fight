@@ -55,7 +55,22 @@ def solution(arr)
     else 
         arr[0] == arr[-1] && arr[0] == arr[(arr.size / 2)] 
     end 
+end 
+
+
+# replace middle element with the sum of the middle two elements if even 
+
+def replace_middle(arr) 
+    m = arr.size / 2 
+    arr[~m..m] = arr[~m..m].sum 
+    arr 
+end 
+
+
+def replace_middle(arr) 
+    if arr.size.even? 
+        middle = arr[arr.size / 2 - 1] + arr[arr.size / 2] 
+        arr[arr.size / 2, 2] = middle 
+    end  
+    arr 
 end
-
-
-# remove duplicates from an array
