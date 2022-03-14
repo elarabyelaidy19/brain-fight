@@ -58,3 +58,4 @@ def solution(arr)
 end
 
 
+# remove duplicates from an array
