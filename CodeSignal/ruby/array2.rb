@@ -44,7 +44,6 @@ end
 def solution(inputArray, l, r)
     inputArray.reject.each_with_index { |x, i| i.between?(l,r) }
 end
-<<<<<<< HEAD
 
 
 # somoothe array array that first element is the same as the last element and the middle if odd, and 
@@ -75,5 +74,15 @@ def replace_middle(arr)
     end  
     arr 
 end
-=======
->>>>>>> fdf9e5c65ea7460e98870a1b6a3f10eb8f71dd6d
+
+
+# count num of missing elements in an array to make it conscutive
+
+def solution(statues)
+    return (statues.max - statues.min) - (statues.size-1)
+end
+
+def solution(arr) 
+    arr.sort! 
+    arr[-1] - arr[0] - arr.size + 1
+end 
