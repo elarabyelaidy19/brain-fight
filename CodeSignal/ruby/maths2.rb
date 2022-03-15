@@ -28,3 +28,32 @@ def solution(n)
     end 
     false 
 end
+
+
+# count number of way to represent n as sum of some consecutive numbers
+
+# O(n2)
+def solution(n)
+    count = 0 
+    for i in 1..n  
+        sum = i
+        for j in i+1..n 
+            sum += j 
+            count += 1 if sum == n 
+        end 
+    end  
+    count
+end
+
+
+# Optimized O(n)
+
+def solution(n) 
+    cnt = 0  
+    i = 3 
+    while n >= i 
+        cnt += 1 if n % i == 0 
+        i += 2 
+    end
+    cnt 
+end 
