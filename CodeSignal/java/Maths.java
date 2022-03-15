@@ -73,4 +73,31 @@ public class Maths {
         return 1 + digitDegree(num);
     }
 
+
+    // 
+    /* # square digit sum every element is element is equal to the sum of squared digits of the previous element.  
+    # The sequence ends once an element that has already been in the sequence appears again. 
+    */ 
+
+    int solution(int a) {
+        int count=1,b=a;
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(a);
+        while(true){
+            int c=0;count++;
+            while(b>0){
+                c+=(b%10)*(b%10);  
+                b/=10;
+            }
+            if(arr.contains(c)){
+                break;
+            }
+            else{
+                arr.add(c);
+                b=c;
+            }
+        }
+        return count;
+    }
+
 }

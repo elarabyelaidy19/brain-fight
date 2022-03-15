@@ -57,3 +57,19 @@ def solution(n)
     end
     cnt 
 end 
+
+
+
+
+# square digit sum every element is element is equal to the sum of squared digits of the previous element.  
+# The sequence ends once an element that has already been in the sequence appears again. 
+
+def square_sequence(n)
+    arr = [n] 
+    while true 
+        n = n.to_s.char.map(&:to_i).map { |x| x**2 }.sum 
+        return arr.size + 1 if arr.include?(n) 
+        arr << n 
+    end
+    arr
+end
