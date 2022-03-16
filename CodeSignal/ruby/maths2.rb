@@ -114,3 +114,26 @@ def solution(current, numberOfDigits)
         
 end
 
+
+
+# Comfortable numbers 
+def solution(l, r)
+    res = 0 
+    (l..r).each do |a| 
+        (a+1..r).each do |b| 
+            s_a = s(a) # 1
+            s_b = s(b) # 2
+            res += 1 if (b >= (a-s_a) and b <= (a+s_a) and a >= (b-s_b) and a <= (b+s_b))  
+        end 
+    end     
+    res 
+end
+
+def s(n) 
+    sum = 0 
+    while n > 0 
+        sum += n % 10 
+        n /= 10 
+    end   
+    sum
+end 
