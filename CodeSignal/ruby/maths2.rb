@@ -104,3 +104,13 @@ def count_digits(n)
     count
 end 
 
+# second solution
+def solution(current, numberOfDigits)
+    while(current.to_s.size <= numberOfDigits) 
+        numberOfDigits -= current.to_s.size 
+        current += 1 
+    end  
+    current - 1 
+        
+end
+
