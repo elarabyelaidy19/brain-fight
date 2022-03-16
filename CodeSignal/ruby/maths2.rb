@@ -67,9 +67,40 @@ end
 def square_sequence(n)
     arr = [n] 
     while true 
-        n = n.to_s.char.map(&:to_i).map { |x| x**2 }.sum 
+        n = n.to_s.chars.map(&:to_i).map { |x| x**2 }.sum 
         return arr.size + 1 if arr.include?(n) 
         arr << n 
     end
     arr
+end 
+
+
+
+# return the number of the last page that can be printed with the given amount of ink represented by  
+# the number of digits that can be printed on one page.
+# count num of digits for every page and if there equal return the current page 
+# if there not  return page - 1 and sub the number of digits.
+def solution(current, numberOfDigits)
+    i = current 
+    while(numberOfDigits > 0) 
+        digit_count = count_digits(i) 
+        if(digit_count == numberOfDigits) 
+            return i 
+        elsif digit_count > numberOfDigits 
+            return i - 1 
+        end  
+        numberOfDigits -= digit_count 
+        i += 1 
+    end  
+    i           
 end
+
+def count_digits(n) 
+    count = 0 
+    while n > 0 
+        n /= 10 
+        count += 1 
+    end  
+    count
+end 
+
