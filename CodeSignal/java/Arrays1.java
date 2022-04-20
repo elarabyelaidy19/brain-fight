@@ -11,7 +11,8 @@ public class Arrays1 {
   exactly one of its element by one. Find the minimal number of moves required 
   to obtain a strictly increasing sequence from the input.
   
-  [1, 2 (+1), 3 (+2) ] 1+2 == 3
+ 
+ [1, 2 (+1), 3 (+2) ] 1+2 == 3
  */
 
   int arrayChange(int[] a) { 
