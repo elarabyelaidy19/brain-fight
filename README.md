@@ -1,1 +1,1 @@
-# A lace where I fight my brain.
+# A place where I fight my brain.
